@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class instantiate : MonoBehaviour
 {
-    public Transform tileObj;
+    public Transform baseObj;
     private Vector3 nextBaseSpawn;
 
     void Start()
     {
-        
+        nextBaseSpawn.z=20
+        StartCoroutine(spawnBase());
     }
 
     // Update is called once per frame
@@ -20,6 +21,8 @@ public class instantiate : MonoBehaviour
     IEnumerator spawnBase()
     {
         yield return new WaitForSeconds(1);
-        instantiate(tileObj, nextBaseSpawn, tileObj.rotation);
+        instantiate(baseObj, nextBaseSpawn, baseObj.rotation);
+        nextBaseSpawn.z += 3;
+        StartCoroutine(spawnBase());
     }
 }
