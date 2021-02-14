@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class instantiate : MonoBehaviour
 {
-    public Transform baseObj;
-    private Vector3 nextBaseSpawn;
+    public Transform bars;
+    private Vector3 nextBarsSpawn;
 
     void Start()
     {
-        nextBaseSpawn.z=20
-        StartCoroutine(spawnBase());
+        nextBarsSpawn.x=24;
+        nextBarsSpawn.y=4;
+        StartCoroutine(spawnBars());
     }
 
     // Update is called once per frame
@@ -18,11 +19,11 @@ public class instantiate : MonoBehaviour
     {
         
     }
-    IEnumerator spawnBase()
+    IEnumerator spawnBars()
     {
         yield return new WaitForSeconds(1);
-        instantiate(baseObj, nextBaseSpawn, baseObj.rotation);
-        nextBaseSpawn.z += 3;
-        StartCoroutine(spawnBase());
+        Instantiate(bars, nextBarsSpawn, bars.rotation);
+        nextBarsSpawn.x += 8;
+        StartCoroutine(spawnBars());
     }
 }
