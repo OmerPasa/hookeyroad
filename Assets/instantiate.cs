@@ -12,14 +12,14 @@ public class instantiate : MonoBehaviour
     private Vector3 nextbarrierrightSpawn;
     private int randomZ;
     double[] barrierleftList = {1.23, 4.56, 7.89};
-    //double[] barrierrightList = {1.23, 4.56, 7.89};
-    List<double> items = new List<double>();
+    double[] barrierrightList = {1.23, 4.56, 7.89};
+   /* List<double> nextbarrierleftList = new List<double>();
     items.Add(1.23);
     items.Add(4.56);
     items.Add(7.89);
     // This will give you a double[3] array with the items of the list.
     double[] barrierleftList = barrierleftList.ToArray();
-
+   */
     void Start()
     {
         nextBarsSpawn.x=24;
