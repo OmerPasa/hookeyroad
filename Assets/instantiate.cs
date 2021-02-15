@@ -6,6 +6,8 @@ public class instantiate : MonoBehaviour
 {
     public Transform bars;
     private Vector3 nextBarsSpawn;
+    public Transform barrier;
+    private Vector3 nextbarrierSpawn;
 
     void Start()
     {
