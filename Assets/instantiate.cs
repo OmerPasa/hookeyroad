@@ -12,7 +12,13 @@ public class instantiate : MonoBehaviour
     private Vector3 nextbarrierrightSpawn;
     private int randomZ;
     double[] barrierleftList = {1.23, 4.56, 7.89};
-    double[] barrierrightList = {1.23, 4.56, 7.89};
+    //double[] barrierrightList = {1.23, 4.56, 7.89};
+    List<double> items = new List<double>();
+    items.Add(1.23);
+    items.Add(4.56);
+    items.Add(7.89);
+    // This will give you a double[3] array with the items of the list.
+    double[] barrierleftList = barrierleftList.ToArray();
 
     void Start()
     {
@@ -37,7 +43,7 @@ public class instantiate : MonoBehaviour
         // left barrier
         yield return new WaitForSeconds(1);
         //randomZ=Random.Range(-1,2);
-        randomZ = barrierleft[Random.Range(0, barrierleftList.Length)];
+        randomZ = barrierleftList[Random.Range(0, barrierleftList.Length)];
         nextbarrierleftSpawn.z=randomZ;
         Instantiate(barrierleft, nextbarrierleftSpawn, barrierleft.rotation);
         nextbarrierleftSpawn.x += 8;
