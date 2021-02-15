@@ -35,7 +35,7 @@ public class instantiate : MonoBehaviour
         yield return new WaitForSeconds(1);
         randomZ=Random.Range(-1,2);
         nextbarrierleftSpawn.z=randomZ;
-        Instantiate(barrier, nextbarrierleftSpawn, barrierleft.rotation);
+        Instantiate(barrierleft, nextbarrierleftSpawn, barrierleft.rotation);
         nextbarrierleftSpawn.x += 8;
         StartCoroutine(spawnbarrierleft());
     }
