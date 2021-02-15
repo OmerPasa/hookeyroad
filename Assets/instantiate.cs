@@ -6,15 +6,22 @@ public class instantiate : MonoBehaviour
 {
     public Transform bars;
     private Vector3 nextBarsSpawn;
-    public Transform barrier;
-    private Vector3 nextbarrierSpawn;
+    public Transform barrierleft;
+    public Transform barrierright;
+    private Vector3 nextbarrierleftSpawn;
+    private Vector3 nextbarrierrightSpawn;
     private int randomZ;
     void Start()
     {
         nextBarsSpawn.x=24;
         nextBarsSpawn.y=4;
+        nextbarrierleftSpawn.x=18;
+        nextbarrierleftSpawn.y=4;
+        nextbarrierrightSpawn.x=18;
+        nextbarrierrightSpawn.y=4;
         StartCoroutine(spawnBars());
-        StartCoroutine(spawnbarrier());
+        StartCoroutine(spawnbarrierleft());
+        //StartCoroutine(spawnbarrier());
     }
 
     // Update is called once per frame
@@ -22,15 +29,15 @@ public class instantiate : MonoBehaviour
     {
         
     }
-     IEnumerator spawnbarrier()
+     IEnumerator spawnbarrierleft()
     {
         // left barrier
         yield return new WaitForSeconds(1);
         randomZ=Random.Range(-1,2);
-        nextbarrierSpawn.z=randomZ;
-        Instantiate(barrier, nextbarrierSpawn, barrier.rotation);
-        nextbarrierSpawn.x += 8;
-        StartCoroutine(spawnbarrier());
+        nextbarrierleftSpawn.z=randomZ;
+        Instantiate(barrier, nextbarrierleftSpawn, barrierleft.rotation);
+        nextbarrierleftSpawn.x += 8;
+        StartCoroutine(spawnbarrierleft());
     }
     IEnumerator spawnBars()
     {

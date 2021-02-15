@@ -202,7 +202,7 @@ PrefabInstance:
     - target: {fileID: 957317494667605996, guid: 32189077e2ee5c44c95087a5b2dfb5f2,
         type: 3}
       propertyPath: m_Name
-      value: barrier centre right
+      value: barrierright
       objectReference: {fileID: 0}
     - target: {fileID: 3164296975933852960, guid: 32189077e2ee5c44c95087a5b2dfb5f2,
         type: 3}
@@ -605,7 +605,7 @@ PrefabInstance:
     - target: {fileID: 957317494667605996, guid: 32189077e2ee5c44c95087a5b2dfb5f2,
         type: 3}
       propertyPath: m_Name
-      value: barrier right left
+      value: barrierleft
       objectReference: {fileID: 0}
     - target: {fileID: 3164296975933852960, guid: 32189077e2ee5c44c95087a5b2dfb5f2,
         type: 3}
@@ -675,7 +675,7 @@ PrefabInstance:
     - target: {fileID: 8632776022382087820, guid: 32189077e2ee5c44c95087a5b2dfb5f2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.889
+      value: 3.92
       objectReference: {fileID: 0}
     - target: {fileID: 8632776022382087820, guid: 32189077e2ee5c44c95087a5b2dfb5f2,
         type: 3}
@@ -848,7 +848,7 @@ PrefabInstance:
     - target: {fileID: 957317494667605996, guid: 32189077e2ee5c44c95087a5b2dfb5f2,
         type: 3}
       propertyPath: m_Name
-      value: barrier left right
+      value: barrierright
       objectReference: {fileID: 0}
     - target: {fileID: 3164296975933852960, guid: 32189077e2ee5c44c95087a5b2dfb5f2,
         type: 3}
@@ -918,7 +918,7 @@ PrefabInstance:
     - target: {fileID: 8632776022382087820, guid: 32189077e2ee5c44c95087a5b2dfb5f2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.918
+      value: 3.92
       objectReference: {fileID: 0}
     - target: {fileID: 8632776022382087820, guid: 32189077e2ee5c44c95087a5b2dfb5f2,
         type: 3}
@@ -992,7 +992,7 @@ PrefabInstance:
     - target: {fileID: 957317494667605996, guid: 32189077e2ee5c44c95087a5b2dfb5f2,
         type: 3}
       propertyPath: m_Name
-      value: barrier left left
+      value: barrierleft
       objectReference: {fileID: 0}
     - target: {fileID: 3164296975933852960, guid: 32189077e2ee5c44c95087a5b2dfb5f2,
         type: 3}
@@ -1121,7 +1121,7 @@ PrefabInstance:
     - target: {fileID: 957317494667605996, guid: 32189077e2ee5c44c95087a5b2dfb5f2,
         type: 3}
       propertyPath: m_Name
-      value: barrier right right
+      value: barrierright
       objectReference: {fileID: 0}
     - target: {fileID: 3164296975933852960, guid: 32189077e2ee5c44c95087a5b2dfb5f2,
         type: 3}
@@ -1250,7 +1250,7 @@ PrefabInstance:
     - target: {fileID: 957317494667605996, guid: 32189077e2ee5c44c95087a5b2dfb5f2,
         type: 3}
       propertyPath: m_Name
-      value: barrier centre left
+      value: barrierleft
       objectReference: {fileID: 0}
     - target: {fileID: 8632776022382087820, guid: 32189077e2ee5c44c95087a5b2dfb5f2,
         type: 3}
