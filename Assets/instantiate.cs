@@ -11,6 +11,9 @@ public class instantiate : MonoBehaviour
     private Vector3 nextbarrierleftSpawn;
     private Vector3 nextbarrierrightSpawn;
     private int randomZ;
+    double[] barrierleftList = {1.23, 4.56, 7.89};
+    double[] barrierrightList = {1.23, 4.56, 7.89};
+
     void Start()
     {
         nextBarsSpawn.x=24;
@@ -33,7 +36,8 @@ public class instantiate : MonoBehaviour
     {
         // left barrier
         yield return new WaitForSeconds(1);
-        randomZ=Random.Range(-1,2);
+        //randomZ=Random.Range(-1,2);
+        randomZ = barrierleft[Random.Range(0, barrierleftList.Length)];
         nextbarrierleftSpawn.z=randomZ;
         Instantiate(barrierleft, nextbarrierleftSpawn, barrierleft.rotation);
         nextbarrierleftSpawn.x += 8;
