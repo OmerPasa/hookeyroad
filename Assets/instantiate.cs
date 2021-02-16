@@ -10,7 +10,7 @@ public class instantiate : MonoBehaviour
     public Transform barrierright;
     private Vector3 nextbarrierleftSpawn;
     private Vector3 nextbarrierrightSpawn;
-    private int randomZ;
+    private double randomZ;
     double[] barrierleftList = {1.23, 4.56, 7.89};
     double[] barrierrightList = {1.23, 4.56, 7.89};
    /* List<double> nextbarrierleftList = new List<double>();
@@ -44,7 +44,7 @@ public class instantiate : MonoBehaviour
         yield return new WaitForSeconds(1);
         //randomZ=Random.Range(-1,2);
         randomZ = barrierleftList[Random.Range(0, barrierleftList.Length)];
-        nextbarrierleftSpawn.z=randomZ;
+        nextbarrierleftSpawn.z= nextbarrierleftSpawn.ToString(randomZ);
         Instantiate(barrierleft, nextbarrierleftSpawn, barrierleft.rotation);
         nextbarrierleftSpawn.x += 8;
         StartCoroutine(spawnbarrierleft());
