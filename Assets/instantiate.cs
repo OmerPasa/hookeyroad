@@ -43,7 +43,8 @@ public class instantiate : MonoBehaviour
         // left barrier
         yield return new WaitForSeconds(1);
         //randomZ=Random.Range(-1,2);
-        randomZ = barrierleftList[Random.Range(0, barrierleftList.Length)];
+        //randomZ = barrierleftList[Random.Range(0, barrierleftList.Length)];
+        randomZ = barrierleftList[Random.Next(barrierleftList)
         randomZ= (double)nextbarrierleftSpawn.z;
         Instantiate(barrierleft, nextbarrierleftSpawn, barrierleft.rotation);
         nextbarrierleftSpawn.x += 8;
