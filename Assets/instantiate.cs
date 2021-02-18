@@ -13,13 +13,6 @@ public class instantiate : MonoBehaviour
     private double randomZ;
     double[] barrierleftList = {1.23, 4.56, 7.89};
     double[] barrierrightList = {1.23, 4.56, 7.89};
-   /* List<double> nextbarrierleftList = new List<double>();
-    items.Add(1.23);
-    items.Add(4.56);
-    items.Add(7.89);
-    // This will give you a double[3] array with the items of the list.
-    double[] barrierleftList = barrierleftList.ToArray();
-   */
     void Start()
     {
         nextBarsSpawn.x=24;
@@ -30,17 +23,13 @@ public class instantiate : MonoBehaviour
         nextbarrierrightSpawn.y=4;
         StartCoroutine(spawnBars());
         StartCoroutine(spawnbarrierleft());
-        //StartCoroutine(spawnbarrier());
     }
-
-    // Update is called once per frame
     void Update()
     {
         
     }
      IEnumerator spawnbarrierleft()
     {
-        // left barrier
         yield return new WaitForSeconds(1);
         //randomZ=Random.Range(-1,2);
         //randomZ = barrierleftList[Random.Range(0, barrierleftList.Length)];
