@@ -24,6 +24,7 @@ public class instantiate : MonoBehaviour
         nextbarrierrightSpawn.y=4;
         StartCoroutine(spawnBars());
         StartCoroutine(spawnbarrierleft());
+        StartCoroutine(spawnbarrierright());
     }
     void Update()
     {
@@ -38,6 +39,16 @@ public class instantiate : MonoBehaviour
         Instantiate(barrierleft, nextbarrierleftSpawn, barrierleft.rotation);
         nextbarrierleftSpawn.x += 8;
         StartCoroutine(spawnbarrierleft());
+    }
+    IEnumerator spawnbarrierright()
+    {
+        yield return new WaitForSeconds(1);
+        //randomZ=Random.Range(-1,2);
+        randomZ = barrierrightList[ran.Next(barrierrightList.Length)];
+        nextbarrierrightSpawn.z = (float)randomZ;
+        Instantiate(barrierright, nextbarrierrightSpawn, barrierright.rotation);
+        nextbarrierrightSpawn.x += 8;
+        StartCoroutine(spawnbarrierright());
     }
     IEnumerator spawnBars()
     {
