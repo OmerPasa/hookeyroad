@@ -37,6 +37,9 @@ public class instantiate : MonoBehaviour
         randomZ = barrierleftList[ran.Next(barrierleftList.Length)];
         nextbarrierleftSpawn.z = (float)randomZ;
         Instantiate(barrierleft, nextbarrierleftSpawn, barrierleft.rotation);
+        randomZ = barrierleftList[ran.Next(barrierleftList.Length)];
+        nextbarrierleftSpawn.z = (float)randomZ;
+        Instantiate(barrierleft, nextbarrierleftSpawn, barrierleft.rotation);
         nextbarrierleftSpawn.x += 8;
         StartCoroutine(spawnbarrierleft());
     }
@@ -44,6 +47,9 @@ public class instantiate : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         //randomZ=Random.Range(-1,2);
+        randomZ = barrierrightList[ran.Next(barrierrightList.Length)];
+        nextbarrierrightSpawn.z = (float)randomZ;
+        Instantiate(barrierright, nextbarrierrightSpawn, barrierright.rotation);
         randomZ = barrierrightList[ran.Next(barrierrightList.Length)];
         nextbarrierrightSpawn.z = (float)randomZ;
         Instantiate(barrierright, nextbarrierrightSpawn, barrierright.rotation);
