@@ -33,10 +33,7 @@ public class instantiate : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         //randomZ=Random.Range(-1,2);
-        //randomZ += 1.56; 
-        //randomZ = barrierleftList[Random.Next(barrierleftList.Length)];
-        randomZ = ran.Next(barrierleftList.Length);
-        //Randomizer.Randomize(barrierleftList);
+        randomZ = barrierleftList[ran.Next(barrierleftList.Length)];
         nextbarrierleftSpawn.z = (float)randomZ;
         Instantiate(barrierleft, nextbarrierleftSpawn, barrierleft.rotation);
         nextbarrierleftSpawn.x += 8;
