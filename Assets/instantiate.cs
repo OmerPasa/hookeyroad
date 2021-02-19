@@ -12,8 +12,8 @@ public class instantiate : MonoBehaviour
     private Vector3 nextbarrierrightSpawn;
     private double randomZ;
     public static System.Random ran = new System.Random();
-    double[] barrierleftList = {1.23, 4.56, 7.89};
-    double[] barrierrightList = {1.23, 4.56, 7.89};
+    double[] barrierleftList = {3.3, 1.79, 0.29};
+    double[] barrierrightList = {3, 1.5, 0};
     void Start()
     {
         nextBarsSpawn.x=24;
