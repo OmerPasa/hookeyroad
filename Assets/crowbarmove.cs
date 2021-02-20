@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class crowbarmove : MonoBehaviour
 {
+
+    bool rightslideUp;
+
+
     void Start()
     {
         GetComponent<Rigidbody>().velocity = new Vector3(5,0,0);
@@ -13,14 +17,17 @@ public class crowbarmove : MonoBehaviour
     void Update()
     {
         // left 2.83  1.33  -0.17
-       if (Input.GetKeyDown(KeyCode.RightArrow))
+       if (Input.GetKeyDown(KeyCode.D))
       {
-        GetComponent<Rigidbody>().velocity = new Vector3(5,0,-2);
+        rightslideUp = true;
+        new WaitForSeconds(1);
+        rightslideUp = false;
       }
-      if (Input.GetKeyDown(KeyCode.D))
+      else
       {
-        GetComponent<Rigidbody>().velocity = new Vector3(5,0,-2);
+          rightslideUp = false;
       }
+     
       if (Input.GetKeyDown(KeyCode.LeftArrow))
       {
         GetComponent<Rigidbody>().velocity = new Vector3(5,0,2);
