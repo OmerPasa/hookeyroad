@@ -13,9 +13,21 @@ public class crowbarmove : MonoBehaviour
     void Update()
     {
         // left 2.83  1.33  -0.17
-      if (Input.GetKey("a"))
+       if (Input.GetKeyDown(KeyCode.RightArrow))
       {
-        GetComponent<Rigidbody>().velocity = new Vector3(5,0,1.5);
+        GetComponent<Rigidbody>().velocity = new Vector3(5,0,-2);
+      }
+      if (Input.GetKeyDown(KeyCode.D))
+      {
+        GetComponent<Rigidbody>().velocity = new Vector3(5,0,-2);
+      }
+      if (Input.GetKeyDown(KeyCode.LeftArrow))
+      {
+        GetComponent<Rigidbody>().velocity = new Vector3(5,0,2);
+      }
+      if (Input.GetKeyDown(KeyCode.A))
+      {
+        GetComponent<Rigidbody>().velocity = new Vector3(5,0,2);
       }
     }
 }
