@@ -5,7 +5,7 @@ using UnityEngine;
 public class crowbarmove : MonoBehaviour
 {
 
-    bool rightslideUp;
+    
 
 
     void Start()
@@ -16,6 +16,7 @@ public class crowbarmove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //xAxis = Input.GetAxisRaw("Horizontal");
         // left 2.83  1.33  -0.17
        if (Input.GetKeyDown(KeyCode.D))
       {
