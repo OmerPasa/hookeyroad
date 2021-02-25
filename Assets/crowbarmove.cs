@@ -36,5 +36,9 @@ public class crowbarmove : MonoBehaviour
       {
         GetComponent<Rigidbody>().velocity = new Vector3(5,0,2);
       }
+      if (Input.GetKeyDown(KeyCode.Space))
+      {
+        isJumpPressed = true;
+      }
     }
 }
