@@ -7,6 +7,12 @@ public class Animate : MonoBehaviour
     Animator anim;
     
     //DON'T  FORGET TO PUT ANIMATION STRINGS !!!!
+
+    rightslideUp;
+    rightslideDown;
+    leftslideUp;
+    leftslideDown;
+
     
     // Start is called before the first frame update
     void Start()
