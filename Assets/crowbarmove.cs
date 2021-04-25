@@ -6,6 +6,7 @@ public class crowbarmove : MonoBehaviour
 {
 
     bool rightslideUp;
+    private bool isJumpPressed;
 
 
     void Start()

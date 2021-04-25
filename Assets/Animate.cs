@@ -4,29 +4,32 @@ using UnityEngine;
 
 public class Animate : MonoBehaviour
 {
-    Animator anim;
+    private Animator anim;
+    private Rigidbody2D rb2d;
+    public string currentState;
+    private float xAxis;
+    private float yAxis;
     
-    //DON'T  FORGET TO PUT ANIMATION STRINGS !!!!
-
+    
+    //DON'T  FORGET TO PUT ANIMATION  !!!!
+    /*
     rightslideUp;
     rightslideDown;
     leftslideUp;
     leftslideDown;
-
-    
-    // Start is called before the first frame update
+    */
     void Start()
     {
-        anim = GetComponent<Animator>();
-        public string currentState;
         
     }
+
 
     // Update is called once per frame
     void Update()
     {
-        anim = GetComponent<Animator>();
+        xAxis = Input.GetAxisRaw("Horizontal"); //don'T need to get raw change it to once pushed button sort of thing
     }
+
     void  ChangeAnimationState(string newState)
     {
         //stoping animation to repeat or interrup itself.
@@ -42,6 +45,5 @@ public class Animate : MonoBehaviour
 
 
     }
-    
 }
-
+    
