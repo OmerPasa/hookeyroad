@@ -4,42 +4,32 @@ using UnityEngine;
 
 public class crowbarmove : MonoBehaviour
 {
-
-    bool rightslideUp;
-    private bool isJumpPressed;
-
-
-    void Start()
+      void Start()
     {
-        GetComponent<Rigidbody>().velocity = new Vector3(5,0,0);
+      transform.position = new Vector3(-0.91f,4.17f,0.15f);
+      GetComponent<Rigidbody>().velocity = new Vector3(-5,0,0);
     }
 
     // Update is called once per frame
     void Update()
     {
         // left 2.83  1.33  -0.17
-       if (Input.GetKeyDown(KeyCode.D))
+      transform.position = new Vector3(Mathf.Clamp(transform.position.z, -3.15f, 0.15f), transform.position.y, transform.position.z);
+
+       if (Input.GetKeyDown(KeyCode.A))
       {
-        rightslideUp = true;
-        new WaitForSeconds(1);
-        rightslideUp = false;
+        Vector3 position = transform.position;
+        position.z += 1.5f;
+        transform.position = position;
       }
-      else
+      if (Input.GetKeyDown(KeyCode.D))
       {
-          rightslideUp = false;
+        Vector3 position = transform.position;
+        position.z -= 1.50f;
+        transform.position = position;
       }
+
+
      
-      if (Input.GetKeyDown(KeyCode.LeftArrow))
-      {
-        GetComponent<Rigidbody>().velocity = new Vector3(5,0,2);
-      }
-      if (Input.GetKeyDown(KeyCode.A))
-      {
-        GetComponent<Rigidbody>().velocity = new Vector3(5,0,2);
-      }
-      if (Input.GetKeyDown(KeyCode.Space))
-      {
-        isJumpPressed = true;
-      }
     }
 }
