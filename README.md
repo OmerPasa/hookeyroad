@@ -1,2 +1,2 @@
 # hookeyroad
-The game about hooking and moving gonna be my game in gamejam in coming days
+The game about hooking and moving with a crowbar :D
