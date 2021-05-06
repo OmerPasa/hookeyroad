@@ -16,11 +16,11 @@ public class instantiate : MonoBehaviour
     double[] barrierrightList = {3, 1.5, 0};
     void Start()
     {
-        nextBarsSpawn.x=8;
+        nextBarsSpawn.x=24;
         nextBarsSpawn.y=4;
-        nextbarrierleftSpawn.x=2;
+        nextbarrierleftSpawn.x=18;
         nextbarrierleftSpawn.y=4;
-        nextbarrierrightSpawn.x=2;
+        nextbarrierrightSpawn.x=18;
         nextbarrierrightSpawn.y=4;
         StartCoroutine(spawnBars());
         StartCoroutine(spawnbarrierleft());
