@@ -10,7 +10,12 @@ PrefabInstance:
     - target: {fileID: 957317494667605996, guid: 32189077e2ee5c44c95087a5b2dfb5f2,
         type: 3}
       propertyPath: m_Name
-      value: barrierright
+      value: barrierright Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 957317494667605996, guid: 32189077e2ee5c44c95087a5b2dfb5f2,
+        type: 3}
+      propertyPath: m_TagString
+      value: barrier
       objectReference: {fileID: 0}
     - target: {fileID: 3164296975933852960, guid: 32189077e2ee5c44c95087a5b2dfb5f2,
         type: 3}
