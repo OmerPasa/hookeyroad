@@ -9,8 +9,6 @@ public class Animate : MonoBehaviour
     public string currentState;
     private float xAxis;
     private float yAxis;
-    
-    
     //DON'T  FORGET TO PUT ANIMATION  !!!!
     /*
     rightslideUp;
@@ -18,12 +16,6 @@ public class Animate : MonoBehaviour
     leftslideUp;
     leftslideDown;
     */
-    void Start()
-    {
-        
-    }
-
-
     // Update is called once per frame
     void Update()
     {
@@ -40,10 +32,6 @@ public class Animate : MonoBehaviour
 
         //reassingning current state
         currentState = newState;
-
-
-
-
     }
 }
     
