@@ -5,12 +5,8 @@ using UnityEngine;
 public class CrowCollision : MonoBehaviour
 {
     public crowbarmove crow;
-   void OnCollisinonEnter (Collision collisionInfo)
+   void OnCollisinonEnter (Collision collision)
    {
-       if (collisionInfo.collider.tag == "barrier")
-       {
-           Debug.Log("GAMEOVER");
-           GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
-       }
+       Debug.Log("Game Over");
    }
 }
