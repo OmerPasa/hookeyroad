@@ -6,7 +6,7 @@ public class crowbarmove : MonoBehaviour
 {
       void Start()
     {
-      transform.position = new Vector3(14f,4.2f,1.6f);
+      transform.position = new Vector3(0.15f,3.2f,1.9f);
       GetComponent<Rigidbody>().velocity = new Vector3(-5,0,0);
     }
     //Vector3(-0.91f,4.17f,0.15f)

@@ -136,7 +136,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 256837245}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e18a8e2fbdf211d478a39ab1990c638a, type: 3}
   m_Name: 
@@ -146,6 +146,7 @@ MonoBehaviour:
     type: 3}
   barrierright: {fileID: 5701073337520147801, guid: 85f46d1e285f09f4bbbb940773b1154b,
     type: 3}
+  "Aral\u0131k": 0
 --- !u!1001 &431544630
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -426,7 +427,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1032833030}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e18a8e2fbdf211d478a39ab1990c638a, type: 3}
   m_Name: 
@@ -436,6 +437,7 @@ MonoBehaviour:
     type: 3}
   barrierright: {fileID: 5701073337520147801, guid: 85f46d1e285f09f4bbbb940773b1154b,
     type: 3}
+  "Aral\u0131k": 0
 --- !u!1 &1231591194
 GameObject:
   m_ObjectHideFlags: 0
@@ -620,6 +622,7 @@ MonoBehaviour:
     type: 3}
   barrierright: {fileID: 5701073337520147801, guid: 85f46d1e285f09f4bbbb940773b1154b,
     type: 3}
+  "Aral\u0131k": 0
 --- !u!1 &2089164712
 GameObject:
   m_ObjectHideFlags: 0

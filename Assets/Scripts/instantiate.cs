@@ -14,8 +14,10 @@ public class instantiate : MonoBehaviour
     public static System.Random ran = new System.Random();
     double[] barrierleftList = {3.3, 1.79, 0.29};
     double[] barrierrightList = {3, 1.5, 0};
+    public float Aralık;
     void Start()
     {
+        Aralık = 3f;
         nextBarsSpawn.x=24;
         nextBarsSpawn.y=4;
         nextbarrierleftSpawn.x=18;
@@ -32,7 +34,7 @@ public class instantiate : MonoBehaviour
     }
      IEnumerator spawnbarrierleft()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.6f);
         //randomZ=Random.Range(-1,2);
         randomZ = barrierleftList[ran.Next(barrierleftList.Length)];
         nextbarrierleftSpawn.z = (float)randomZ;
@@ -40,12 +42,12 @@ public class instantiate : MonoBehaviour
         randomZ = barrierleftList[ran.Next(barrierleftList.Length)];
         nextbarrierleftSpawn.z = (float)randomZ;
         Instantiate(barrierleft, nextbarrierleftSpawn, barrierleft.rotation);
-        nextbarrierleftSpawn.x += 8;
+        nextbarrierleftSpawn.x += Aralık;
         StartCoroutine(spawnbarrierleft());
     }
     IEnumerator spawnbarrierright()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.6f);
         //randomZ=Random.Range(-1,2);
         randomZ = barrierrightList[ran.Next(barrierrightList.Length)];
         nextbarrierrightSpawn.z = (float)randomZ;
@@ -53,7 +55,7 @@ public class instantiate : MonoBehaviour
         randomZ = barrierrightList[ran.Next(barrierrightList.Length)];
         nextbarrierrightSpawn.z = (float)randomZ;
         Instantiate(barrierright, nextbarrierrightSpawn, barrierright.rotation);
-        nextbarrierrightSpawn.x += 8;
+        nextbarrierrightSpawn.x += Aralık;
         StartCoroutine(spawnbarrierright());
     }
     IEnumerator spawnBars()
