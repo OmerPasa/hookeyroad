@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class instantiate : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class instantiate : MonoBehaviour
     public float Diffuculty;
     void Start()
     {
-        Console.ReadLine(Diffuculty);
+       // float Diffuculty = Console.ReadLine();   // in future needs to be UI
         Aralık = 3f;
         nextBarsSpawn.x=24;
         nextBarsSpawn.y=4;
