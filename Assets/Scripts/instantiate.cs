@@ -15,8 +15,10 @@ public class instantiate : MonoBehaviour
     double[] barrierleftList = {3.3, 1.79, 0.29};
     double[] barrierrightList = {3, 1.5, 0};
     public float Aralık;
+    public float Diffuculty;
     void Start()
     {
+        Console.ReadLine(Diffuculty);
         Aralık = 3f;
         nextBarsSpawn.x=24;
         nextBarsSpawn.y=4;
@@ -34,7 +36,7 @@ public class instantiate : MonoBehaviour
     }
      IEnumerator spawnbarrierleft()
     {
-        yield return new WaitForSeconds(0.6f);
+        yield return new WaitForSeconds(Diffuculty);
         //randomZ=Random.Range(-1,2);
         randomZ = barrierleftList[ran.Next(barrierleftList.Length)];
         nextbarrierleftSpawn.z = (float)randomZ;
@@ -47,7 +49,7 @@ public class instantiate : MonoBehaviour
     }
     IEnumerator spawnbarrierright()
     {
-        yield return new WaitForSeconds(0.6f);
+        yield return new WaitForSeconds(Diffuculty);
         //randomZ=Random.Range(-1,2);
         randomZ = barrierrightList[ran.Next(barrierrightList.Length)];
         nextbarrierrightSpawn.z = (float)randomZ;

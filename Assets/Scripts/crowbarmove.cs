@@ -9,8 +9,7 @@ public class crowbarmove : MonoBehaviour
       transform.position = new Vector3(0.15f,3.2f,2.05f);
       GetComponent<Rigidbody>().velocity = new Vector3(-5,0,0);
     }
-    //Vector3(-0.91f,4.17f,0.15f)
-    // Update is called once per frame
+    
     void Update()
     {
       //transform.position = new Vector3(transform.position.x, transform.position.y, Mathf.Clamp(transform.position.z, 3.15f, 0.15f));
