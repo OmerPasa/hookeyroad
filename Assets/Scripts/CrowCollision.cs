@@ -1,11 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class CrowCollision : MonoBehaviour
 {
-   void OnCollisinonEnter (Collision collision)
-   {
-       Debug.Log("Game Over");
-   }
+void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "barrier") 
+        {
+            Debug.Log("has collide");
+        }
+    }
+
 }
