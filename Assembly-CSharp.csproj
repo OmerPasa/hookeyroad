@@ -43,6 +43,8 @@
      <Compile Include="Assets\Scripts\crowbarmove.cs" />
      <Compile Include="Assets\Scripts\CrowCollision.cs" />
      <Compile Include="Assets\Scripts\instantiate.cs" />
+     <Compile Include="Assets\Scripts\checker.cs" />
+     <Compile Include="Assets\Textures\checkerzsz.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
