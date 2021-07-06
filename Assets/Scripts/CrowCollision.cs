@@ -9,5 +9,4 @@ void OnTriggerEnter(Collider other)
     {   
         Debug.Log("has collide");
     }
-
 }
