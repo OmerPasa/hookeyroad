@@ -123,6 +123,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &63933415 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5701073337520147801, guid: 85f46d1e285f09f4bbbb940773b1154b,
+    type: 3}
+  m_PrefabInstance: {fileID: 785325779}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &256837245 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6771772248425669014, guid: 2f7a22a4f52bc514a8dc4e017f54e97d,
@@ -478,12 +484,12 @@ PrefabInstance:
     - target: {fileID: 5701073337520147801, guid: 85f46d1e285f09f4bbbb940773b1154b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.92
+      value: 3.931
       objectReference: {fileID: 0}
     - target: {fileID: 5701073337520147801, guid: 85f46d1e285f09f4bbbb940773b1154b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.14
+      value: -0.144
       objectReference: {fileID: 0}
     - target: {fileID: 5701073337520147801, guid: 85f46d1e285f09f4bbbb940773b1154b,
         type: 3}
@@ -525,7 +531,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 70
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6749115348715445625, guid: 85f46d1e285f09f4bbbb940773b1154b,
+        type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6749115348715445625, guid: 85f46d1e285f09f4bbbb940773b1154b,
+        type: 3}
+      propertyPath: m_Height
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: -6147747336130872919, guid: 85f46d1e285f09f4bbbb940773b1154b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 85f46d1e285f09f4bbbb940773b1154b, type: 3}
 --- !u!1001 &1032833029
 PrefabInstance:
@@ -801,10 +818,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bars: {fileID: 6771772248425669013, guid: 2f7a22a4f52bc514a8dc4e017f54e97d, type: 3}
-  barrierleft: {fileID: 2959021798616454228, guid: ece882475d83a6642b4954fe65ebf2d4,
-    type: 3}
-  barrierright: {fileID: 5701073337520147801, guid: 85f46d1e285f09f4bbbb940773b1154b,
-    type: 3}
+  barrierleft: {fileID: 1955229212}
+  barrierright: {fileID: 63933415}
   "Aral\u0131k": 0
   Diffuculty: 0
 --- !u!1001 &1616811646
@@ -869,13 +884,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 105
       objectReference: {fileID: 0}
+    - target: {fileID: 4298516510813389940, guid: ece882475d83a6642b4954fe65ebf2d4,
+        type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4298516510813389940, guid: ece882475d83a6642b4954fe65ebf2d4,
+        type: 3}
+      propertyPath: m_Height
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6022532714305826100, guid: ece882475d83a6642b4954fe65ebf2d4,
         type: 3}
       propertyPath: m_Name
       value: barrierleftV
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8117278508744857181, guid: ece882475d83a6642b4954fe65ebf2d4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ece882475d83a6642b4954fe65ebf2d4, type: 3}
+--- !u!4 &1955229212 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2959021798616454228, guid: ece882475d83a6642b4954fe65ebf2d4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1616811646}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2089164712
 GameObject:
   m_ObjectHideFlags: 0
