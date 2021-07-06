@@ -38,12 +38,12 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\actionCam.cs" />
      <Compile Include="Assets\Scripts\TimeManager.cs" />
+     <Compile Include="Assets\Scripts\controllingscriptional.cs" />
      <Compile Include="Assets\Scripts\rotation.cs" />
      <Compile Include="Assets\Scripts\Animate.cs" />
      <Compile Include="Assets\Scripts\crowbarmove.cs" />
      <Compile Include="Assets\Scripts\CrowCollision.cs" />
      <Compile Include="Assets\Scripts\instantiate.cs" />
-     <Compile Include="Assets\controllingscriptional.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
