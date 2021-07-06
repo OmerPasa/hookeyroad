@@ -382,7 +382,7 @@ CapsuleCollider:
   m_Radius: 0.0880788
   m_Height: 1
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0.2}
+  m_Center: {x: 0, y: -0.3, z: -0.2}
 --- !u!114 &431544637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -820,8 +820,8 @@ MonoBehaviour:
   bars: {fileID: 6771772248425669013, guid: 2f7a22a4f52bc514a8dc4e017f54e97d, type: 3}
   barrierleft: {fileID: 1955229212}
   barrierright: {fileID: 63933415}
-  "Aral\u0131k": 0
-  Diffuculty: 0
+  "Aral\u0131k": 2
+  Diffuculty: 6
 --- !u!1001 &1616811646
 PrefabInstance:
   m_ObjectHideFlags: 0
