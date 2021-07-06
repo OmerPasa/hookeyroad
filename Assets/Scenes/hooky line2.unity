@@ -820,7 +820,7 @@ MonoBehaviour:
   bars: {fileID: 6771772248425669013, guid: 2f7a22a4f52bc514a8dc4e017f54e97d, type: 3}
   barrierleft: {fileID: 1955229212}
   barrierright: {fileID: 63933415}
-  "Aral\u0131k": 2
+  "Aral\u0131k": 6
   Diffuculty: 6
 --- !u!1001 &1616811646
 PrefabInstance:

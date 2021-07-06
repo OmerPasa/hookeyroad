@@ -20,7 +20,7 @@ public class instantiate : MonoBehaviour
     void Start()
     {
        // float Diffuculty = Console.ReadLine();   // in future needs to be UI
-        Aralık = 5f;
+        Aralık = 5f;//normal
         Diffuculty = 0.8f;
         nextBarsSpawn.x=24;
         nextBarsSpawn.y=4;
