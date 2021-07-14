@@ -5,18 +5,20 @@ using System;
 
 public class instantiate : MonoBehaviour
 {
-    public Transform bars;
-    private Vector3 nextBarsSpawn;
+    public Transform bars;     // getting orginal components
     public Transform barrierleft;
     public Transform barrierright;
+    public Transform Tunnel;
+    private Vector3 nextBarsSpawn;  //locating next spawn point
     private Vector3 nextbarrierleftSpawn;
     private Vector3 nextbarrierrightSpawn;
+    private Vector3 nextTunnelSpawn;
     private double randomZ;
     public static System.Random ran = new System.Random();
-    double[] barrierleftList = {3.3, 1.79, 0.29};
+    double[] barrierleftList = {3.3, 1.79, 0.29}; //initial locations    
     double[] barrierrightList = {3, 1.5, 0};
-    public float Aralık;
-    public float Diffuculty;
+    public float Aralık;                // distances between barriers
+    public float Diffuculty;            //spawning rate determination
     void Start()
     {
        // float Diffuculty = Console.ReadLine();   // in future needs to be UI
@@ -28,9 +30,13 @@ public class instantiate : MonoBehaviour
         nextbarrierleftSpawn.y=4;
         nextbarrierrightSpawn.x=18;
         nextbarrierrightSpawn.y=4;
+        nextTunnelSpawn.x=75;
+        nextTunnelSpawn.y=0;
+
         StartCoroutine(spawnBars());
         StartCoroutine(spawnbarrierleft());
         StartCoroutine(spawnbarrierright());
+        StartCoroutine(spawnTunnel());
     }
     void Update()
     {
@@ -39,7 +45,7 @@ public class instantiate : MonoBehaviour
      IEnumerator spawnbarrierleft()
     {
         yield return new WaitForSeconds(Diffuculty);
-        //randomZ=Random.Range(-1,2);
+        
         randomZ = barrierleftList[ran.Next(barrierleftList.Length)];
         nextbarrierleftSpawn.z = (float)randomZ;
         Instantiate(barrierleft, nextbarrierleftSpawn, barrierleft.rotation);
@@ -52,7 +58,7 @@ public class instantiate : MonoBehaviour
     IEnumerator spawnbarrierright()
     {
         yield return new WaitForSeconds(Diffuculty);
-        //randomZ=Random.Range(-1,2);
+        
         randomZ = barrierrightList[ran.Next(barrierrightList.Length)];
         nextbarrierrightSpawn.z = (float)randomZ;
         Instantiate(barrierright, nextbarrierrightSpawn, barrierright.rotation);
@@ -68,5 +74,12 @@ public class instantiate : MonoBehaviour
         Instantiate(bars, nextBarsSpawn, bars.rotation);
         nextBarsSpawn.x += 8;
         StartCoroutine(spawnBars());
+    }
+    IEnumerator spawnTunnel()
+    {
+        yield return new WaitForSeconds(3);
+        Instantiate(Tunnel, nextTunnelSpawn, Tunnel.rotation);// spanwning
+        nextTunnelSpawn.x += 71;                               // planning next spawn point
+        StartCoroutine(spawnTunnel());                        //restarting routine
     }
 }
