@@ -22,6 +22,7 @@ public class instantiate : MonoBehaviour
     void Start()
     {
        // float Diffuculty = Console.ReadLine();   // in future needs to be UI
+        // all till croutine is initial localizations  
         Aralık = 5f;//normal
         Diffuculty = 0.8f;
         nextBarsSpawn.x=24;
@@ -30,7 +31,7 @@ public class instantiate : MonoBehaviour
         nextbarrierleftSpawn.y=4;
         nextbarrierrightSpawn.x=18;
         nextbarrierrightSpawn.y=4;
-        nextTunnelSpawn.x=75;
+        nextTunnelSpawn.x=360;
         nextTunnelSpawn.y=0;
 
         StartCoroutine(spawnBars());
@@ -79,7 +80,7 @@ public class instantiate : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         Instantiate(Tunnel, nextTunnelSpawn, Tunnel.rotation);// spanwning
-        nextTunnelSpawn.x += 71;                               // planning next spawn point
+        nextTunnelSpawn.x += 180;                               // planning next spawn point
         StartCoroutine(spawnTunnel());                        //restarting routine
     }
 }
