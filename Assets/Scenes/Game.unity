@@ -392,6 +392,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6302606842470705800, guid: 514e882c253bf624190a87c5f76ee13a,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6302606842470705802, guid: 514e882c253bf624190a87c5f76ee13a,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1139,10 +1144,25 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5568195833356278619, guid: 8b540fd2928b7bd4ebfc1335e07a7cfd,
+        type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5568195833356278619, guid: 8b540fd2928b7bd4ebfc1335e07a7cfd,
+        type: 3}
+      propertyPath: m_ReceiveGI
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5568195833356278620, guid: 8b540fd2928b7bd4ebfc1335e07a7cfd,
+        type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5568195833356278621, guid: 8b540fd2928b7bd4ebfc1335e07a7cfd,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8944327070556681182, guid: 8b540fd2928b7bd4ebfc1335e07a7cfd,
         type: 3}
