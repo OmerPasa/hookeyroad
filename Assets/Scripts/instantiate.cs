@@ -71,14 +71,14 @@ public class instantiate : MonoBehaviour
     }
     IEnumerator spawnBars()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1.5f);
         Instantiate(bars, nextBarsSpawn, bars.rotation);
         nextBarsSpawn.x += 8;
         StartCoroutine(spawnBars());
     }
     IEnumerator spawnTunnel()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(15);
         Instantiate(Tunnel, nextTunnelSpawn, Tunnel.rotation);// spanwning
         nextTunnelSpawn.x += 180;                               // planning next spawn point
         StartCoroutine(spawnTunnel());                        //restarting routine
