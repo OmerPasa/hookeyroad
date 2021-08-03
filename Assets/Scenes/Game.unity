@@ -192,6 +192,16 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3153270322653754705, guid: 514e882c253bf624190a87c5f76ee13a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153270322653754705, guid: 514e882c253bf624190a87c5f76ee13a,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: f93563e281ddf1542860dcf1f83c42ee, type: 2}
     - target: {fileID: 3779403806884619129, guid: 514e882c253bf624190a87c5f76ee13a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -444,6 +454,19 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: -0.3, z: -0.2}
+--- !u!114 &431544638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431544631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a685960e99165634a88b43a92b9f3414, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 
 --- !u!1001 &762630660
 PrefabInstance:
   m_ObjectHideFlags: 0
