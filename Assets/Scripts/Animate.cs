@@ -17,10 +17,6 @@ public class Animate : MonoBehaviour
     leftslideDown;
     */
     // Update is called once per frame
-    void Start() 
-    {
-        anim = GetComponent<Animator>();
-    }
     void Update()
     {
         xAxis = Input.GetAxisRaw("Horizontal"); //don'T need to get raw change it to once pushed button sort of thing
