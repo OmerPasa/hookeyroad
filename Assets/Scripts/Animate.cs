@@ -9,13 +9,9 @@ public class Animate : MonoBehaviour
     public string currentState;
     private float xAxis;
     private float yAxis;
-    //DON'T  FORGET TO PUT ANIMATION  !!!!
-    /*
-    rightslideUp;
-    rightslideDown;
-    leftslideUp;
-    leftslideDown;
-    */
+    //ANİMATİON REFERANCES!
+    const string LIGHTFLICKER = "Light_Flicker";
+    const string JUMPTORIGHT_LONG = "jumptoright_Long";
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -24,6 +20,10 @@ public class Animate : MonoBehaviour
     {
         //xAxis = Input.GetAxisRaw("Horizontal"); //don'T need to get raw change it to once pushed button sort of thing
         // But it may require to be landed on certain place in certain positiion so it will require some 
+        if(Input.GetKeyDown(KeyCode.Z))
+        {
+            anim.Play(JUMPTORIGHT_LONG);
+        }
     }
 
     void  ChangeAnimationState(string newState)
