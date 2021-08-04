@@ -23,6 +23,7 @@ public class Animate : MonoBehaviour
     void Update()
     {
         //xAxis = Input.GetAxisRaw("Horizontal"); //don'T need to get raw change it to once pushed button sort of thing
+        // But it may require to be landed on certain place in certain positiion so it will require some 
     }
 
     void  ChangeAnimationState(string newState)
