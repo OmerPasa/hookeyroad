@@ -4,13 +4,7 @@ using UnityEngine;
 
 public class rotation : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+//THAT SCRİPT HAS TO BE PUTTEN TO CHİLD OBJECT!
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.W))
