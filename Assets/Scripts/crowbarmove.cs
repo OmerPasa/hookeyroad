@@ -13,7 +13,7 @@ public class crowbarmove : MonoBehaviour
     void Update()
     {
       //this if makes sure , crowbar in certain positions
-      if (transform.position.z <= 0.08 || transform.position.z >=4.66)
+      if (transform.position.z <= 0.08 || transform.position.z >=4.60)
 {
     // Create values between this range (minY to maxY) and store in yPos
     float zPos = Mathf.Clamp(transform.position.z, 0.113f,3.161f);    
