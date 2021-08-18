@@ -330,7 +330,7 @@ PrefabInstance:
     - target: {fileID: 6302606841324454680, guid: 514e882c253bf624190a87c5f76ee13a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6302606841324454680, guid: 514e882c253bf624190a87c5f76ee13a,
         type: 3}
@@ -965,12 +965,24 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1639832894}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a685960e99165634a88b43a92b9f3414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 
+--- !u!114 &1639832900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639832894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6820af73e02777847bab5c6dc07a7f40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2089164712
 GameObject:
   m_ObjectHideFlags: 0
@@ -1054,7 +1066,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 35.816, y: 89.165, z: 1.563}
 --- !u!114 &2089164716
 MonoBehaviour:
@@ -1264,7 +1276,7 @@ PrefabInstance:
     - target: {fileID: 8289581570601906198, guid: 0b69dc681f87ff5499d3df9db23db323,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8289581570601906199, guid: 0b69dc681f87ff5499d3df9db23db323,
         type: 3}
@@ -1284,7 +1296,7 @@ PrefabInstance:
     - target: {fileID: 8289581570601906281, guid: 0b69dc681f87ff5499d3df9db23db323,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8289581570601906283, guid: 0b69dc681f87ff5499d3df9db23db323,
         type: 3}
@@ -1324,7 +1336,7 @@ PrefabInstance:
     - target: {fileID: 8289581570601906283, guid: 0b69dc681f87ff5499d3df9db23db323,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8289581570601906283, guid: 0b69dc681f87ff5499d3df9db23db323,
         type: 3}

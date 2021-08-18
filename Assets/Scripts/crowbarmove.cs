@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,7 +21,7 @@ public class crowbarmove : MonoBehaviour
     // Assigns these values to the Transform.position component of the Player
     transform.position = new Vector3(transform.position.x, transform.position.y, zPos);
 }
-      transform.position = new Vector3(Mathf.Clamp(transform.position.x, 0.5f, 0.5f), transform.position.y, transform.position.z);
+    transform.position = new Vector3(Mathf.Clamp(transform.position.x, 0.5f, 0.5f), transform.position.y, transform.position.z);
       
       if (Input.GetKeyDown(KeyCode.A))
       {
