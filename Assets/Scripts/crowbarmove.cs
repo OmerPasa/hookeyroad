@@ -12,7 +12,8 @@ public class crowbarmove : MonoBehaviour
     
     void Update()
     {
-      //this if makes sure , crowbar in Z position
+      // doesn't compatible with animator :( 
+     /* //this if makes sure , crowbar in Z position
       if (transform.position.z <= 0.08 || transform.position.z >=4.60)
 {
     // Create values between this range (minY to maxY) and store in yPos
@@ -22,7 +23,7 @@ public class crowbarmove : MonoBehaviour
     transform.position = new Vector3(transform.position.x, transform.position.y, zPos);
 }
     transform.position = new Vector3(Mathf.Clamp(transform.position.x, 0.5f, 0.5f), transform.position.y, transform.position.z);
-      
+      */
       if (Input.GetKeyDown(KeyCode.A))
       {
         Vector3 position = transform.position;
