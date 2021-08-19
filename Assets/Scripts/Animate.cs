@@ -11,7 +11,8 @@ public class Animate : MonoBehaviour
     private float yAxis;
     //ANİMATİON REFERANCES!
     const string LIGHTFLICKER = "Light_Flicker";
-    const string JUMPTORIGHT_LONG = "jumptoright_Long";
+    const string JUMPTORIGHT_LONG = "jumptoRight_Long";
+    const string JUMPTOLEFT_LONG = "jumptoLeft_Long";
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -23,6 +24,10 @@ public class Animate : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Z))
         {
             anim.Play(JUMPTORIGHT_LONG);
+        }
+        if(Input.GetKeyDown(KeyCode.V))
+        {
+            anim.Play(JUMPTOLEFT_LONG);
         }
     }
 
