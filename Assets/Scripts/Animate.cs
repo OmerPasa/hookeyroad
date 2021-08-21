@@ -29,6 +29,7 @@ public class Animate : MonoBehaviour
         {
             anim.Play(JUMPTOLEFT_LONG);
         }
+        
     }
 
     void  ChangeAnimationState(string newState)
@@ -42,5 +43,6 @@ public class Animate : MonoBehaviour
         //reassingning current state
         currentState = newState;
     }
+    
 }
     
