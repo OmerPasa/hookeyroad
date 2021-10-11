@@ -77,8 +77,8 @@ public class crowbarmove : MonoBehaviour
 
     void ChangeAnimationState(string newAnimation)
     {
-        if (currentAnimaton == newAnimation) return;
-        animator.Play(newAnimation);
-        currentAnimaton = newAnimation;
+      if (currentAnimaton == newAnimation) return;
+      animator.Play(newAnimation);
+      currentAnimaton = newAnimation;
     }
 }
