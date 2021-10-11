@@ -23,11 +23,13 @@ public class Animate : MonoBehaviour
         // But it may require to be landed on certain place in certain positiion so it will require some 
         if(Input.GetKeyDown(KeyCode.Z))
         {
-            anim.Play(JUMPTORIGHT_LONG);
+            ChangeAnimationState("JUMPTORIGHT_LONG");
+            //anim.Play(JUMPTORIGHT_LONG);
         }
         if(Input.GetKeyDown(KeyCode.V))
         {
-            anim.Play(JUMPTOLEFT_LONG);
+            ChangeAnimationState("JUMPTOLEFT_LONG");
+            //anim.Play(JUMPTOLEFT_LONG);
         }
         
     }
