@@ -10,6 +10,7 @@ public class crowbarmove : MonoBehaviour
     private float xAxis;
     private float yAxis;
     private string currentAnimaton;
+    private float Length;
     private bool In_Motion;
     //ANİMATİON REFERANCES!
     const string LIGHTFLICKER = "Light_Flicker";
@@ -19,6 +20,7 @@ public class crowbarmove : MonoBehaviour
     {
       transform.position = new Vector3(0.5f,4.186f,3.114f);
       GetComponent<Rigidbody>().velocity = new Vector3(5,0,0);// crowbar and crowbarrot had to have rigidbody to work!!
+      animator = GetComponent<Animator>();
     }
     
     void Update()
@@ -54,20 +56,20 @@ public class crowbarmove : MonoBehaviour
       if (!In_Motion)
       {
           In_Motion = true;
-          ChangeAnimationState("LIGHTFLICKER");
-        
-        
+          ChangeAnimationState(LIGHTFLICKER);// basicly idle
+
           if(Input.GetKeyDown(KeyCode.Z))
         {
-          //ChangeAnimationState("JUMPTORIGHT_LONG");
-          animator.Play(JUMPTORIGHT_LONG);
+          ChangeAnimationState(JUMPTORIGHT_LONG);
+          Length = animator.GetCurrentAnimatorStateInfo(0).length;
+          Invoke("Motion_Happened",Length);
         }
           if(Input.GetKeyDown(KeyCode.V))
         {
-          ChangeAnimationState("JUMPTOLEFT_LONG");
-          //anim.Play(JUMPTOLEFT_LONG);
+          ChangeAnimationState(JUMPTOLEFT_LONG);
+          Length = animator.GetCurrentAnimatorStateInfo(0).length;
+          Invoke("Motion_Happened",Length);
         }
-        Invoke("Motion_Happened",0f);
       }
     }
     void Motion_Happened()
@@ -78,6 +80,7 @@ public class crowbarmove : MonoBehaviour
     void ChangeAnimationState(string newAnimation)
     {
       if (currentAnimaton == newAnimation) return;
+
       animator.Play(newAnimation);
       currentAnimaton = newAnimation;
     }
