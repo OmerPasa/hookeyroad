@@ -11,11 +11,12 @@ public class crowbarmove : MonoBehaviour
     private float yAxis;
     private string currentAnimaton;
     private float Length;
-    private bool In_Motion;
+    private bool In_Motion = false;
     //ANİMATİON REFERANCES!
     const string LIGHTFLICKER = "Light_Flicker";
     const string JUMPTORIGHT_LONG = "jumptoRight_Long";
     const string JUMPTOLEFT_LONG = "jumptoLeft_Long";
+    public Joystick joystick;
       void Start()
     {
       transform.position = new Vector3(0.5f,4.186f,3.114f);
@@ -23,7 +24,7 @@ public class crowbarmove : MonoBehaviour
       animator = GetComponent<Animator>();
     }
     
-    void Update()
+    void FixedUpdate()
     {
       
       // doesn't compatible with animator :( 
@@ -49,6 +50,17 @@ public class crowbarmove : MonoBehaviour
         Vector3 position = transform.position;
         position.z -= 1.5f;
         transform.position = position;
+      }
+
+      if (joystick.Horizontal >= .2f)
+      {
+        ChangeAnimationState(JUMPTORIGHT_LONG);
+      } else if (joystick.Horizontal <= -.2f)
+      {
+        ChangeAnimationState(JUMPTOLEFT_LONG);
+      } else
+      {
+        ChangeAnimationState(LIGHTFLICKER);
       }
 
         //xAxis = Input.GetAxisRaw("Horizontal"); //don'T need to get raw change it to once pushed button sort of thing
