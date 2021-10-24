@@ -23,8 +23,8 @@ public class instantiate : MonoBehaviour
     {
        // float Diffuculty = Console.ReadLine();   // in future needs to be UI
         // all till croutine is initial localizations  
-        Aralık = 5f;//normal
-        Diffuculty = 0.8f;
+        //Aralık = 5f;//normal
+        //Diffuculty = 0.8f;
         nextBarsSpawn.x=24;
         nextBarsSpawn.y=4;
         nextbarrierleftSpawn.x=18;
