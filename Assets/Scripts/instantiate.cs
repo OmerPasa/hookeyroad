@@ -31,7 +31,7 @@ public class instantiate : MonoBehaviour
         nextbarrierleftSpawn.y=4;
         nextbarrierrightSpawn.x=18;
         nextbarrierrightSpawn.y=4;
-        nextTunnelSpawn.x=360;
+        nextTunnelSpawn.x=355;
         nextTunnelSpawn.y=0;
 
         StartCoroutine(spawnBars());
@@ -78,9 +78,9 @@ public class instantiate : MonoBehaviour
     }
     IEnumerator spawnTunnel()
     {
-        yield return new WaitForSeconds(15);
+        yield return new WaitForSeconds(20f);
         Instantiate(Tunnel, nextTunnelSpawn, Tunnel.rotation);// spanwning
-        nextTunnelSpawn.x += 180;                               // planning next spawn point
+        nextTunnelSpawn.x += 177;                               // planning next spawn point
         StartCoroutine(spawnTunnel());                        //restarting routine
     }
 }
