@@ -19,7 +19,7 @@ public class crowbarmove : MonoBehaviour
     public Joystick joystick;
       void Start()
     {
-      transform.position = new Vector3(0.5f,4.186f,3.114f);
+      transform.position = new Vector3(0f,4.003f,3.159f);
       GetComponent<Rigidbody>().velocity = new Vector3(5,0,0);// crowbar and crowbarrot had to have rigidbody to work!!
       animator = GetComponent<Animator>();
     }

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4845416022028064897}
   - component: {fileID: 2218159721896272304}
   - component: {fileID: 1391911363610430276}
+  - component: {fileID: 7777597780740618501}
   m_Layer: 0
   m_Name: crowbarrot
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1838362807207906148}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.65199995, y: 4.0128, z: 1.638}
+  m_LocalPosition: {x: 0.4920003, y: 0.97100043, z: -0.24900007}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3779403806884619129}
@@ -74,6 +75,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &7777597780740618501
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838362807207906148}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f93563e281ddf1542860dcf1f83c42ee, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6302606841324454683
 GameObject:
   m_ObjectHideFlags: 0
@@ -119,6 +139,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 489a668e202b219449a5753019b61041, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentState: 
+  joystick: {fileID: 0}
 --- !u!54 &6302606841324454686
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5111,17 +5133,17 @@ PrefabInstance:
     - target: {fileID: 3148098112652472207, guid: 52fc1a69f232c3944bda70c3cff6cfcd,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.65199995
+      value: -0.4920003
       objectReference: {fileID: 0}
     - target: {fileID: 3148098112652472207, guid: 52fc1a69f232c3944bda70c3cff6cfcd,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.0128
+      value: -0.97100043
       objectReference: {fileID: 0}
     - target: {fileID: 3148098112652472207, guid: 52fc1a69f232c3944bda70c3cff6cfcd,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.638
+      value: 0.24900007
       objectReference: {fileID: 0}
     - target: {fileID: 3148098112652472207, guid: 52fc1a69f232c3944bda70c3cff6cfcd,
         type: 3}
@@ -5166,17 +5188,17 @@ PrefabInstance:
     - target: {fileID: 3148098112652472207, guid: 52fc1a69f232c3944bda70c3cff6cfcd,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 200.00003
+      value: 200.00014
       objectReference: {fileID: 0}
     - target: {fileID: 3148098112652472207, guid: 52fc1a69f232c3944bda70c3cff6cfcd,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 200.00002
+      value: 200.00012
       objectReference: {fileID: 0}
     - target: {fileID: 3148098112652472207, guid: 52fc1a69f232c3944bda70c3cff6cfcd,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 200.00003
+      value: 200.00014
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52fc1a69f232c3944bda70c3cff6cfcd, type: 3}
