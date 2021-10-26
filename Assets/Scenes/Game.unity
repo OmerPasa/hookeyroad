@@ -600,6 +600,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5965870333803266314, guid: 2f7a22a4f52bc514a8dc4e017f54e97d,
+        type: 3}
+      propertyPath: crowbar
+      value: 
+      objectReference: {fileID: 2141166066}
     - target: {fileID: 6771772248213075552, guid: 2f7a22a4f52bc514a8dc4e017f54e97d,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -689,6 +694,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -3365486625733259229, guid: 85f46d1e285f09f4bbbb940773b1154b,
+        type: 3}
+      propertyPath: crowbar
+      value: 
+      objectReference: {fileID: 2141166066}
     - target: {fileID: 3862571991892702265, guid: 85f46d1e285f09f4bbbb940773b1154b,
         type: 3}
       propertyPath: m_Name
@@ -894,6 +904,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5965870333803266314, guid: 2f7a22a4f52bc514a8dc4e017f54e97d,
+        type: 3}
+      propertyPath: crowbar
+      value: 
+      objectReference: {fileID: 2141166066}
     - target: {fileID: 6771772248213075552, guid: 2f7a22a4f52bc514a8dc4e017f54e97d,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1220,6 +1235,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2776090504314200679, guid: ece882475d83a6642b4954fe65ebf2d4,
+        type: 3}
+      propertyPath: crowbar
+      value: 
+      objectReference: {fileID: 2141166066}
     - target: {fileID: 2959021798616454228, guid: ece882475d83a6642b4954fe65ebf2d4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1515,6 +1535,12 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &2141166066 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1143535588604815559, guid: f19c4cf289599b447a0dbad1e3f375aa,
+    type: 3}
+  m_PrefabInstance: {fileID: 6388914661499588482}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5568195832127734015
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1720,6 +1746,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: crowbar_Master
+      objectReference: {fileID: 0}
+    - target: {fileID: 6388914660692323298, guid: f19c4cf289599b447a0dbad1e3f375aa,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7393958486669876177, guid: f19c4cf289599b447a0dbad1e3f375aa,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7393958486669876177, guid: f19c4cf289599b447a0dbad1e3f375aa,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7393958486669876177, guid: f19c4cf289599b447a0dbad1e3f375aa,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7393958486669876177, guid: f19c4cf289599b447a0dbad1e3f375aa,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7393958486669876177, guid: f19c4cf289599b447a0dbad1e3f375aa,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f19c4cf289599b447a0dbad1e3f375aa, type: 3}
