@@ -238,7 +238,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d0e5a5acf3ef6044af5975c70decb2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crowbar: {fileID: 1143535588604815556, guid: f19c4cf289599b447a0dbad1e3f375aa, type: 3}
+  crowbar: {fileID: 1143535588604815559, guid: f19c4cf289599b447a0dbad1e3f375aa, type: 3}
+  distance: 0
 --- !u!1 &6771772249244845152
 GameObject:
   m_ObjectHideFlags: 0

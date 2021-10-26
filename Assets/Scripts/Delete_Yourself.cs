@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 public class Delete_Yourself : MonoBehaviour
 {
-    public Gameobject crowbar;  // for some reason game doesn't recognize this find a way
+    [SerializeField]
+    public GameObject crowbar;  // for some reason game doesn't recognize this find a way
     public float distance;
     void Update()
     {
-        distance = Vector3.Distance (crowbar.position, transform.position);
+        distance = Vector3.Distance (crowbar.transform.position, transform.position);
         Debug.Log(distance);
         if (distance >= 50 )
         {
