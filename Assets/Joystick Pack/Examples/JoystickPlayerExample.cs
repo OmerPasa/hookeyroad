@@ -10,6 +10,16 @@ public class JoystickPlayerExample : MonoBehaviour
 
     public void FixedUpdate()
     {
+        if (variableJoystick.Horizontal >= .2f)  
+      {
+        Debug.Log("RIGHT_LONG");;
+      } else if (variableJoystick.Horizontal <= -.2f)
+      {
+        Debug.Log("LEFT_LONG");
+      } else
+      {
+        Debug.Log("LIGHTFLICKER");
+      }
         Vector3 direction = Vector3.forward * variableJoystick.Vertical + Vector3.right * variableJoystick.Horizontal;
         rb.AddForce(direction * speed * Time.fixedDeltaTime, ForceMode.VelocityChange);
     }

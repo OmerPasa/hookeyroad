@@ -90,7 +90,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1577762903519275829}
-  - component: {fileID: 4312274612615424849}
   m_Layer: 0
   m_Name: tunel
   m_TagString: Untagged
@@ -117,19 +116,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!114 &4312274612615424849
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2210853643223986575}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d0e5a5acf3ef6044af5975c70decb2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  crowbar: {fileID: 1143535588604815556, guid: f19c4cf289599b447a0dbad1e3f375aa, type: 3}
 --- !u!1 &6323391006958803377
 GameObject:
   m_ObjectHideFlags: 0
