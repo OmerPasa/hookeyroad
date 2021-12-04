@@ -86,7 +86,7 @@ public class crowbarmove : MonoBehaviour
         {
           RightMotion = false;
           ChangeAnimationState(JUMPTORIGHT_LONG);
-          Debug.Log("RIGHT_LONG");;
+          Debug.Log("RIGHT_LONG");
           Length = animator.GetCurrentAnimatorStateInfo(0).length;
           Invoke("Motion_Happened",Length);
         }
