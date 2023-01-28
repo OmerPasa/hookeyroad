@@ -56,11 +56,11 @@ public class crowbarmove : MonoBehaviour
         position.z -= 1.5f;
         transform.position = position;
       }
-      if (Input.GetKeyDown(KeyCode.Z))
+      if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.W) )
       {
         RightMotion = true;
       }
-      if (Input.GetKeyDown(KeyCode.V))
+      if (Input.GetKeyDown(KeyCode.V) || Input.GetKeyDown(KeyCode.S))
       {
         LeftMotion = true;
       }
