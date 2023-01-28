@@ -1,0 +1,65 @@
+{
+    "name": "InputManager",
+    "maps": [
+        {
+            "name": "movement",
+            "id": "59f37f07-e8e7-48bd-bb5a-37278b98aff8",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "dda3be82-fbb1-4cf1-988b-742426bdb8b4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "New action1",
+                    "type": "Button",
+                    "id": "c7f454cd-b3a4-4785-982c-eac2f9dcfa13",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "9037c1a4-a51e-4b96-8a9a-a05e156436c9",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "32a83ff6-eb59-4f16-9682-503a4c84ede6",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4dabe0e3-4766-4cb3-91ca-17b58b0a2c33",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
