@@ -2,22 +2,76 @@
     "name": "InputManager",
     "maps": [
         {
-            "name": "movement",
-            "id": "59f37f07-e8e7-48bd-bb5a-37278b98aff8",
+            "name": "Player",
+            "id": "0dc626d3-2160-4609-a26a-8ac357d9ae31",
             "actions": [
                 {
-                    "name": "New action",
+                    "name": "DS",
                     "type": "Button",
-                    "id": "dda3be82-fbb1-4cf1-988b-742426bdb8b4",
+                    "id": "808912c2-71af-4a26-9223-9b3ca81a56fb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "DW",
+                    "type": "Button",
+                    "id": "7f52196d-1a43-4c86-a5c5-d0bf6357c166",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "D",
+                    "type": "Button",
+                    "id": "5ca42b65-2c9e-4e14-aabe-11724115c7a1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "RotationW",
+                    "type": "Button",
+                    "id": "ff455e7d-f5f8-4603-8b83-a9dc8bc57b4e",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "New action1",
+                    "name": "RotationS",
                     "type": "Button",
-                    "id": "c7f454cd-b3a4-4785-982c-eac2f9dcfa13",
+                    "id": "cb2a6de9-d9b0-4883-b2ab-8a1adcc6eadf",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "AS",
+                    "type": "Button",
+                    "id": "788bb1d4-941e-4635-b857-883c9271d5d2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "A",
+                    "type": "Button",
+                    "id": "0aef1505-8d49-4a12-9008-a3e5b0a6cb64",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "AW",
+                    "type": "Button",
+                    "id": "53c13142-19c3-491c-b3a4-393e63ff62cf",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -26,40 +80,200 @@
             ],
             "bindings": [
                 {
-                    "name": "",
-                    "id": "9037c1a4-a51e-4b96-8a9a-a05e156436c9",
-                    "path": "",
+                    "name": "DS",
+                    "id": "8df18279-b187-46ff-a3f9-d8c48adfbb18",
+                    "path": "OneModifier",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "DS",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "5d4ea6ef-1583-4864-971d-c1394523e53e",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DS",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "binding",
+                    "id": "d0b46b02-bb3c-488e-8326-9745bc043548",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DS",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "a5aa31ce-ba92-47d8-bd30-653b25b123fc",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotationW",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "AS",
+                    "id": "e550f79b-9589-4869-a06e-8e2788541874",
+                    "path": "OneModifier",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AS",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "dba26923-6f35-47a7-ac9e-80a0e5c30638",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AS",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "binding",
+                    "id": "46de47fa-bcf1-4e24-9ed7-e5a171d58010",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AS",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "AW",
+                    "id": "ae3d3730-43e4-4bfa-9163-ba4c4a40e66d",
+                    "path": "OneModifier",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AW",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "d18285ed-0893-4b16-a468-13fb1478cde9",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AW",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "binding",
+                    "id": "8bbd3e34-c544-40a9-b1d1-196eede07bd6",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AW",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "0a3f8453-3e37-4f86-8a22-daa9d7e9b899",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "A",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "32a83ff6-eb59-4f16-9682-503a4c84ede6",
-                    "path": "",
+                    "id": "81f0fb77-e390-4d02-9cae-6ab2897f0265",
+                    "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "RotationS",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "4dabe0e3-4766-4cb3-91ca-17b58b0a2c33",
-                    "path": "",
+                    "id": "f825357b-cade-4e1f-bec0-35e1efef5ad3",
+                    "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action1",
+                    "action": "D",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "DW",
+                    "id": "21774a1e-cb47-4dd7-bcc3-ae344c61886f",
+                    "path": "OneModifier",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DW",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "243382ef-8eee-4c7e-be90-fa6f1e1e4838",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DW",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "binding",
+                    "id": "94a2ebc2-8156-4e28-82dd-e201ce31c564",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DW",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }
     ],
-    "controlSchemes": []
+    "controlSchemes": [
+        {
+            "name": "PC",
+            "bindingGroup": "PC",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<VirtualMouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
 }
