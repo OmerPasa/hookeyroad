@@ -32,7 +32,7 @@ public class crowbarmove : MonoBehaviour
     {
         //joystick = GetComponent<Joystick>();
         transform.position = new Vector3(0f, 4.003f, 3.159f);
-        GetComponent<Rigidbody>().velocity = new Vector3(5, 0, 0);// crowbar and crowbarrot had to have rigidbody to work!!
+        GetComponent<Rigidbody>().velocity = new Vector3(4, 0, 0);// crowbar and crowbarrot had to have rigidbody to work!!
         animator = GetComponent<Animator>();
         In_Motion = false;
     }
@@ -54,6 +54,10 @@ public class crowbarmove : MonoBehaviour
         }
         //transform.position = new Vector3(Mathf.Clamp(transform.position.x, 0.5f, 0.5f), transform.position.y, transform.position.z);
 
+    }
+
+    void Update()
+    {
         if (inputM.Player.A.triggered)
         {
             Debug.Log("inputA triggered");
@@ -126,26 +130,6 @@ public class crowbarmove : MonoBehaviour
         }
     }
 
-    public void DeleteBehindPlayer()
-    {
-        //find the current position of the player
-        Vector3 currentPos = transform.position;
-
-        //find all gameobjects in the scene
-        GameObject[] allObjects = GameObject.FindObjectsOfType<GameObject>();
-
-        //loop through all objects in the scene
-        foreach (GameObject obj in allObjects)
-        {
-            Vector3 objPos = obj.transform.position;
-
-            //if the position of the object is behind the player, delete it
-            if (objPos.x < currentPos.x)
-            {
-                Destroy(obj);
-            }
-        }
-    }
     void Motion_Happened()
     {
         In_Motion = false;

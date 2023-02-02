@@ -31,7 +31,7 @@ public class instantiate : MonoBehaviour
         nextbarrierleftSpawn.y = 4;
         nextbarrierrightSpawn.x = 18;
         nextbarrierrightSpawn.y = 4;
-        nextTunnelSpawn.x = 172.3f;
+        nextTunnelSpawn.x = 65;
         nextTunnelSpawn.y = 0;
 
         StartCoroutine(spawnBars());
@@ -45,7 +45,7 @@ public class instantiate : MonoBehaviour
     }
     IEnumerator spawnbarrierleft()
     {
-        yield return new WaitForSeconds(Diffuculty);
+        yield return new WaitForSeconds(1f);
 
         randomZ = barrierleftList[ran.Next(barrierleftList.Length)];
         nextbarrierleftSpawn.z = (float)randomZ;
@@ -58,7 +58,7 @@ public class instantiate : MonoBehaviour
     }
     IEnumerator spawnbarrierright()
     {
-        yield return new WaitForSeconds(Diffuculty);
+        yield return new WaitForSeconds(1f);
 
         randomZ = barrierrightList[ran.Next(barrierrightList.Length)];
         nextbarrierrightSpawn.z = (float)randomZ;
@@ -78,9 +78,9 @@ public class instantiate : MonoBehaviour
     }
     IEnumerator spawnTunnel()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4f);
         Instantiate(Tunnel, nextTunnelSpawn, Tunnel.rotation);// spanwning
-        nextTunnelSpawn.x += 177;                               // planning next spawn point
+        nextTunnelSpawn.x += 45;                               // planning next spawn point
         StartCoroutine(spawnTunnel());                        //restarting routine
     }
 }

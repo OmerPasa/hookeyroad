@@ -5,12 +5,14 @@ public class Delete_Yourself : MonoBehaviour
 {
     [SerializeField]
     public GameObject crowbar;  // for some reason game doesn't recognize this find a way
-    public float distance;
+    public int distance;
     void Update()
     {
-        distance = Vector3.Distance(crowbar.transform.position, transform.position);
-        Debug.Log(distance);
-        if (distance >= 200)
+
+        crowbar = (GameObject.Find("crowbar_Masterer"));
+        distance = (int)crowbar.transform.position.x - (int)transform.position.x;
+        Debug.Log(distance + " currrent distance is ");
+        if (crowbar.transform.position.x > transform.position.x + 50)
         {
             Invoke("Die", 2f);
         }
