@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class crowbarmove : MonoBehaviour
 {
     private Animator animator;
-    private InputManager inputM;
+    public InputManager inputM;
     private Rigidbody2D rb2d;
     public string currentState;
     private float xAxis;
@@ -21,6 +21,13 @@ public class crowbarmove : MonoBehaviour
     const string JUMPTORIGHT_LONG = "jumptoRight_Long";
     const string JUMPTOLEFT_LONG = "jumptoLeft_Long";
     public VariableJoystick joystick;
+
+    private void Awake() => inputM = new InputManager();
+
+    //Route and Un-route events
+    private void OnEnable() => inputM.Enable();
+    private void OnDisable() => inputM.Disable();
+
     void Start()
     {
         //joystick = GetComponent<Joystick>();
@@ -32,6 +39,7 @@ public class crowbarmove : MonoBehaviour
 
     void FixedUpdate()
     {
+        //DeleteBehindPlayer();
         Debug.Log(In_Motion);
 
         // doesn't compatible with animator :( 
@@ -48,23 +56,33 @@ public class crowbarmove : MonoBehaviour
 
         if (inputM.Player.A.triggered)
         {
+            Debug.Log("inputA triggered");
             Vector3 position = transform.position;
             position.z += 1.5f;
             transform.position = position;
         }
         if (inputM.Player.D.triggered)
         {
+            Debug.Log("inputD triggered");
             Vector3 position = transform.position;
             position.z -= 1.5f;
             transform.position = position;
         }
         if (inputM.Player.RotationW.triggered)
         {
-            RightMotion = true;
+            transform.eulerAngles = new Vector3(
+            transform.eulerAngles.x,
+            transform.eulerAngles.y + 180,
+            transform.eulerAngles.z
+    );
         }
         if (inputM.Player.RotationS.triggered)
         {
-            LeftMotion = true;
+            transform.eulerAngles = new Vector3(
+            transform.eulerAngles.x,
+            transform.eulerAngles.y - 180,
+            transform.eulerAngles.z
+    );
         }
         /*if (joystick.Horizontal >= .2f)
         {
@@ -104,6 +122,27 @@ public class crowbarmove : MonoBehaviour
             {
                 ChangeAnimationState(LIGHTFLICKER);
                 Invoke("Motion_Happened", 0f);
+            }
+        }
+    }
+
+    public void DeleteBehindPlayer()
+    {
+        //find the current position of the player
+        Vector3 currentPos = transform.position;
+
+        //find all gameobjects in the scene
+        GameObject[] allObjects = GameObject.FindObjectsOfType<GameObject>();
+
+        //loop through all objects in the scene
+        foreach (GameObject obj in allObjects)
+        {
+            Vector3 objPos = obj.transform.position;
+
+            //if the position of the object is behind the player, delete it
+            if (objPos.x < currentPos.x)
+            {
+                Destroy(obj);
             }
         }
     }

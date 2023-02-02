@@ -4,20 +4,20 @@ using UnityEngine;
 public class Delete_Yourself : MonoBehaviour
 {
     [SerializeField]
-    //public GameObject crowbar;  // for some reason game doesn't recognize this find a way
+    public GameObject crowbar;  // for some reason game doesn't recognize this find a way
     public float distance;
     void Update()
     {
-        //distance = Vector3.Distance (crowbar.transform.position, transform.position);
-        //Debug.Log(distance);
-        if (distance >= 50 )
+        distance = Vector3.Distance(crowbar.transform.position, transform.position);
+        Debug.Log(distance);
+        if (distance >= 200)
         {
-            Invoke("Die",2f);
+            Invoke("Die", 2f);
         }
     }
     void OnBecameInvisible()
     {
-        Invoke("Die",0.5f);
+        Invoke("Die", 0.5f);
     }
     void Die()
     {

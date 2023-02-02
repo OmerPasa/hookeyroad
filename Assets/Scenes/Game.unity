@@ -1645,7 +1645,7 @@ MonoBehaviour:
     m_ActionId: 53c13142-19c3-491c-b3a4-393e63ff62cf
     m_ActionName: Player/AW[/Keyboard/w,/Keyboard/a]
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
+  m_DefaultControlScheme: PC
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 2089164714}
@@ -1854,6 +1854,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: crowbar_Master
+      objectReference: {fileID: 0}
+    - target: {fileID: 1143535589743673684, guid: f19c4cf289599b447a0dbad1e3f375aa,
+        type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 392
       objectReference: {fileID: 0}
     - target: {fileID: 6388914660692323298, guid: f19c4cf289599b447a0dbad1e3f375aa,
         type: 3}
