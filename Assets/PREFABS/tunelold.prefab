@@ -326,6 +326,7 @@ GameObject:
   - component: {fileID: 2136920097677767987}
   - component: {fileID: 2136920097677767949}
   - component: {fileID: 2136920097677767948}
+  - component: {fileID: 10979764138627664}
   m_Layer: 0
   m_Name: toptunnel
   m_TagString: Untagged
@@ -398,6 +399,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &10979764138627664
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2136920097677767986}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.343127, y: 1.2671392, z: 1.8834612}
+  m_Center: {x: 0.00000017881393, y: 0, z: 0.0000002682209}
 --- !u!1 &2136920098457186938
 GameObject:
   m_ObjectHideFlags: 0

@@ -45,7 +45,7 @@ public class instantiate : MonoBehaviour
     }
     IEnumerator spawnbarrierleft()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.8f);
 
         randomZ = barrierleftList[ran.Next(barrierleftList.Length)];
         nextbarrierleftSpawn.z = (float)randomZ;
@@ -58,7 +58,7 @@ public class instantiate : MonoBehaviour
     }
     IEnumerator spawnbarrierright()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.8f);
 
         randomZ = barrierrightList[ran.Next(barrierrightList.Length)];
         nextbarrierrightSpawn.z = (float)randomZ;
