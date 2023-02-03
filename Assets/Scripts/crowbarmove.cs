@@ -16,7 +16,27 @@ public class crowbarmove : MonoBehaviour
     private bool In_Motion = false;
     private bool LeftMotion;
     private bool RightMotion;
+
+// animation needed varibles.
+    public float posZ;
+    public float rotY;
+    public bool LeftBar;
+    public bool MidBar;
+    public bool RightBar;
+
     //ANİMATİON REFERANCES!
+    const string Move_A = "Move_A";
+    const string Move_Areverse = "Move_Areverse";
+    const string Move_AS = "Move_AS";
+    const string Move_ASreverse = "Move_ASreverse";
+    const string Move_AW = "Move_AW";
+    const string Move_AWreverse = "Move_AWreverse";
+    const string Move_D = "Move_D";
+    const string Move_Dreverse = "Move_Dreverse";
+    const string Move_DS = "Move_DS";
+    const string Move_DSreverse = "Move_DSreverse";
+    const string Move_DW = "Move_DW";
+    const string Move_DWreverse = "Move_DWreverse";
     const string LIGHTFLICKER = "Light_Flicker";
     const string JUMPTORIGHT_LONG = "jumptoRight_Long";
     const string JUMPTOLEFT_LONG = "jumptoLeft_Long";
@@ -32,6 +52,7 @@ public class crowbarmove : MonoBehaviour
     {
         //joystick = GetComponent<Joystick>();
         transform.position = new Vector3(0f, 4.003f, 3.159f);
+        LeftBar = true;
         GetComponent<Rigidbody>().velocity = new Vector3(4, 0, 0);// crowbar and crowbarrot had to have rigidbody to work!!
         animator = GetComponent<Animator>();
         In_Motion = false;
@@ -53,25 +74,88 @@ public class crowbarmove : MonoBehaviour
             transform.position = new Vector3(transform.position.x, transform.position.y, zPos);
         }
         //transform.position = new Vector3(Mathf.Clamp(transform.position.x, 0.5f, 0.5f), transform.position.y, transform.position.z);
-
+        posZ = transform.position.z;
+        rotY = transform.eulerAngles.y;
     }
 
     void Update()
     {
-        if (inputM.Player.A.triggered)
+        if (inputM.Player.A.triggered && posZ == 1.6 && rotY == -180  && MidBar = true)
         {
-            Debug.Log("inputA triggered");
-            Vector3 position = transform.position;
-            position.z += 1.5f;
-            transform.position = position;
+            MidBar = false;
+            LeftBar= true;
+            ChangeAnimationState(Move_A);
         }
-        if (inputM.Player.D.triggered)
+        if (inputM.Player.AS.triggered && posZ == 1.6 && rotY == 0  && MidBar = true)
         {
-            Debug.Log("inputD triggered");
-            Vector3 position = transform.position;
-            position.z -= 1.5f;
-            transform.position = position;
+            MidBar = false;
+            LeftBar= true;
+            ChangeAnimationState(Move_AS); 
         }
+        if (inputM.Player.AW.triggered && posZ == 1.6 && rotY == 0  && MidBar = true)
+        {
+            MidBar = false;
+            LeftBar= true;
+            ChangeAnimationState(Move_AW);
+        }
+        if (inputM.Player.A.triggered && posZ == 3 && rotY == 0  && LeftBar = true)
+        {
+            MidBar = true;
+            LeftBar= false;
+            ChangeAnimationState(Move_Areverse);  
+        }
+        if (inputM.Player.AS.triggered && posZ == 3 && rotY == -180  && LeftBar = true )
+        {
+            MidBar = true;
+            LeftBar= false;
+            ChangeAnimationState(Move_ASreverse);
+        }
+        if (inputM.Player.AW.triggered && posZ == 3 && rotY == 0  && LeftBar = true)
+        {
+            MidBar = true;
+            LeftBar= false;
+            ChangeAnimationState(Move_AWreverse);  
+        }
+
+
+        if (inputM.Player.D.triggered && posZ == 1.6 && rotY == 0  && MidBar = true) 
+        {
+            MidBar = false;
+            RightBar = true;
+            ChangeAnimationState(Move_D);
+        }
+        if (inputM.Player.DS.triggered && posZ == 1.6 && rotY == 0  && MidBar = true)
+        {
+            MidBar = false;
+            RightBar = true;
+            ChangeAnimationState(Move_DS);  
+        }
+        if (inputM.Player.DW.triggered && posZ == 1.6 && rotY == -180  && MidBar = true)
+        {
+            MidBar = false;
+            RightBar = true;
+            ChangeAnimationState(Move_DW);
+        }
+        if (inputM.Player.D.triggered && posZ == 0.1 && rotY == -180  && RightBar = true)
+        {
+            MidBar = true;
+            RightBar = false;
+            ChangeAnimationState(Move_Dreverse);  
+        }
+        if (inputM.Player.DS.triggered && posZ == 0.1 && rotY == 0  && RightBar = true)
+        {
+            MidBar = true;
+            RightBar = false;
+            ChangeAnimationState(Move_DSreverse);
+        }
+        if (inputM.Player.DW.triggered && posZ == 0.1 && rotY == -180  && RightBar = true)
+        {
+            MidBar = true;
+            RightBar = false;
+            ChangeAnimationState(Move_DWreverse);  
+        }
+
+
         if (inputM.Player.RotationW.triggered)
         {
             transform.eulerAngles = new Vector3(
