@@ -76,12 +76,6 @@ public class crowbarmove : MonoBehaviour
             transform.position = new Vector3(transform.position.x, transform.position.y, zPos);
         }
         //transform.position = new Vector3(Mathf.Clamp(transform.position.x, 0.5f, 0.5f), transform.position.y, transform.position.z);
-
-
-        posZ = transform.position.z;
-        UnityEngine.Debug.Log(posZ + " this is current posZ");
-        rotY = transform.eulerAngles.y;
-        UnityEngine.Debug.Log(rotY + " this is current rotY");
     }
 
     void Update()
@@ -91,101 +85,144 @@ public class crowbarmove : MonoBehaviour
         Quaternion rotation = transform.rotation;
 
         UnityEngine.Debug.Log(position.z + " current posz update2");
-        UnityEngine.Debug.Log(rotation.eulerAngles.y + " current roty update2");
+        UnityEngine.Debug.Log((int)rotation.eulerAngles.y + " current roty update2");
 
-        float yRotation = rotation.eulerAngles.y;
+        float yRotation = (int)rotation.eulerAngles.y;
         if (yRotation > 180f)
         {
             yRotation -= 360f;
         }
 
-        /*         if (inputM.Player.A.triggered && Mathf.Abs(position.z - 1.6f) < epsilon)
-                {
-                    UnityEngine.Debug.Log("A triggered!!");
-                }
-                if (inputM.Player.D.triggered && MidBar == true && Mathf.Abs(yRotation - 0f) < epsilon)
-                {
-                    UnityEngine.Debug.Log("D triggered!!");
-                } */
-
-
-
         if (inputM.Player.A.triggered && Mathf.Abs(position.z - 1.6f) < epsilon && Mathf.Abs(yRotation - 180f) < epsilon && MidBar == true)
         {
-            MidBar = false;
-            LeftBar = true;
             UnityEngine.Debug.Log("A triggered!!");
-            ChangeAnimationState(Move_A);
         }
-        if (inputM.Player.AS.triggered && Mathf.Abs(position.z - 1.6f) < epsilon && Mathf.Abs(yRotation - 0f) < epsilon && MidBar == true)
-        {
-            MidBar = false;
-            LeftBar = true;
-            ChangeAnimationState(Move_AS);
-        }
-        if (inputM.Player.AW.triggered && Mathf.Abs(position.z - 1.6f) < epsilon && Mathf.Abs(yRotation - 0f) < epsilon && MidBar == true)
-        {
-            MidBar = false;
-            LeftBar = true;
-            ChangeAnimationState(Move_AW);
-        }
-        if (inputM.Player.A.triggered && Mathf.Abs(position.z - 3f) < epsilon && Mathf.Abs(yRotation - 0f) < epsilon && LeftBar == true)
-        {
-            MidBar = true;
-            LeftBar = false;
-            ChangeAnimationState(Move_Areverse);
-        }
-        if (inputM.Player.AS.triggered && Mathf.Abs(position.z - 3f) < epsilon && Mathf.Abs(yRotation - 180f) < epsilon && LeftBar == true)
-        {
-            MidBar = true;
-            LeftBar = false;
-            ChangeAnimationState(Move_ASreverse);
-        }
-        if (inputM.Player.AW.triggered && Mathf.Abs(position.z - 3f) < epsilon && Mathf.Abs(yRotation - 0f) < epsilon && LeftBar == true)
-        {
-            MidBar = true;
-            LeftBar = false;
-            ChangeAnimationState(Move_AWreverse);
-        }
-
-
         if (inputM.Player.D.triggered && Mathf.Abs(position.z - 1.6f) < epsilon && Mathf.Abs(yRotation - 0f) < epsilon && MidBar == true)
         {
-            MidBar = false;
-            RightBar = true;
-            ChangeAnimationState(Move_D);
-        }
-        if (inputM.Player.DS.triggered && Mathf.Abs(position.z - 1.6f) < epsilon && Mathf.Abs(yRotation - 0f) < epsilon && MidBar == true)
-        {
-            MidBar = false;
-            RightBar = true;
-            ChangeAnimationState(Move_DS);
-        }
-        if (inputM.Player.DW.triggered && Mathf.Abs(position.z - 1.6f) < epsilon && Mathf.Abs(yRotation - 180f) < epsilon && MidBar == true)
-        {
-            MidBar = false;
-            RightBar = true;
-            ChangeAnimationState(Move_DW);
-        }
-        if (inputM.Player.D.triggered && Mathf.Abs(position.z - 0.1f) < epsilon && Mathf.Abs(yRotation - 180f) < epsilon && RightBar == true)
-        {
-            MidBar = true;
-            RightBar = false;
-            ChangeAnimationState(Move_Dreverse);
-        }
-        if (inputM.Player.DS.triggered && Mathf.Abs(position.z - 0.1f) < epsilon && Mathf.Abs(yRotation - 0f) < epsilon && RightBar == true)
-        {
-            MidBar = true;
-            RightBar = false;
-            ChangeAnimationState(Move_DSreverse);
-        }
-        if (inputM.Player.DW.triggered && Mathf.Abs(position.z - 0.1f) < epsilon && Mathf.Abs(yRotation - 180f) < epsilon && RightBar == true)
-        {
-            MidBar = true;
-            RightBar = false;
-            ChangeAnimationState(Move_DWreverse);
+            UnityEngine.Debug.Log("D triggered!!");
         }
 
+
+        if (inputM.Player.A.triggered)
+        {
+            if (Mathf.Abs(position.z - 1.6f) < epsilon && Mathf.Abs(yRotation - 180f) < epsilon && MidBar == true)
+            {
+                MidBar = false;
+                LeftBar = true;
+                //UnityEngine.Debug.Log("A triggered!!");
+                ChangeAnimationState(Move_A);
+                Length = animator.GetCurrentAnimatorStateInfo(0).length;
+                Invoke("Motion_Happened", Length);
+            }
+            else if (Mathf.Abs(position.z - 3f) < epsilon && Mathf.Abs(yRotation - 0f) < epsilon && LeftBar == true)
+            {
+                MidBar = true;
+                LeftBar = false;
+                ChangeAnimationState(Move_Areverse);
+                Length = animator.GetCurrentAnimatorStateInfo(0).length;
+                Invoke("Motion_Happened", Length);
+            }
+        }
+        else if (inputM.Player.AS.triggered)
+        {
+            if (Mathf.Abs(position.z - 1.6f) < epsilon && Mathf.Abs(yRotation - 0f) < epsilon && MidBar == true)
+            {
+                MidBar = false;
+                LeftBar = true;
+                ChangeAnimationState(Move_AS);
+                Length = animator.GetCurrentAnimatorStateInfo(0).length;
+                Invoke("Motion_Happened", Length);
+            }
+            else if (Mathf.Abs(position.z - 3f) < epsilon && Mathf.Abs(yRotation - 180f) < epsilon && LeftBar == true)
+            {
+                MidBar = true;
+                LeftBar = false;
+                ChangeAnimationState(Move_ASreverse);
+                Length = animator.GetCurrentAnimatorStateInfo(0).length;
+                Invoke("Motion_Happened", Length);
+            }
+        }
+        else if (inputM.Player.AW.triggered)
+        {
+            if (Mathf.Abs(position.z - 1.6f) < epsilon && Mathf.Abs(yRotation - 0f) < epsilon && MidBar == true)
+            {
+                MidBar = false;
+                LeftBar = true;
+                ChangeAnimationState(Move_AW);
+                Length = animator.GetCurrentAnimatorStateInfo(0).length;
+                Invoke("Motion_Happened", Length);
+            }
+            else if (Mathf.Abs(position.z - 3f) < epsilon && Mathf.Abs(yRotation - 0f) < epsilon && LeftBar == true)
+            {
+                MidBar = true;
+                LeftBar = false;
+                ChangeAnimationState(Move_AWreverse);
+                Length = animator.GetCurrentAnimatorStateInfo(0).length;
+                Invoke("Motion_Happened", Length);
+            }
+        }
+        else if (inputM.Player.D.triggered)
+        {
+            if (Mathf.Abs(position.z - 1.6f) < epsilon && Mathf.Abs(yRotation - 0f) < epsilon && MidBar == true)
+            {
+                MidBar = false;
+                RightBar = true;
+                ChangeAnimationState(Move_D);
+                Length = animator.GetCurrentAnimatorStateInfo(0).length;
+                Invoke("Motion_Happened", Length);
+            }
+            else if (Mathf.Abs(position.z - 0.1f) < epsilon && Mathf.Abs(yRotation - 180f) < epsilon && RightBar == true)
+            {
+                MidBar = true;
+                RightBar = false;
+                ChangeAnimationState(Move_Dreverse);
+                Length = animator.GetCurrentAnimatorStateInfo(0).length;
+                Invoke("Motion_Happened", Length);
+            }
+        }
+        else if (inputM.Player.DS.triggered)
+        {
+            if (Mathf.Abs(position.z - 1.6f) < epsilon && Mathf.Abs(yRotation - 0f) < epsilon && MidBar == true)
+            {
+                MidBar = false;
+                RightBar = true;
+                ChangeAnimationState(Move_DS);
+                Length = animator.GetCurrentAnimatorStateInfo(0).length;
+                Invoke("Motion_Happened", Length);
+            }
+            else if (Mathf.Abs(position.z - 0.1f) < epsilon && Mathf.Abs(yRotation - 0f) < epsilon && RightBar == true)
+            {
+                MidBar = true;
+                RightBar = false;
+                ChangeAnimationState(Move_DSreverse);
+                Length = animator.GetCurrentAnimatorStateInfo(0).length;
+                Invoke("Motion_Happened", Length);
+            }
+        }
+        else if (inputM.Player.DW.triggered)
+        {
+            if (Mathf.Abs(position.z - 1.6f) < epsilon && Mathf.Abs(yRotation - 180f) < epsilon && MidBar == true)
+            {
+                MidBar = false;
+                RightBar = true;
+                ChangeAnimationState(Move_DW);
+                Length = animator.GetCurrentAnimatorStateInfo(0).length;
+                Invoke("Motion_Happened", Length);
+            }
+            else if (Mathf.Abs(position.z - 0.1f) < epsilon && Mathf.Abs(yRotation - 180f) < epsilon && RightBar == true)
+            {
+                RightBar = false;
+                MidBar = true;
+                ChangeAnimationState(Move_DWreverse);
+                Length = animator.GetCurrentAnimatorStateInfo(0).length;
+                Invoke("Motion_Happened", Length);
+            }
+        }
+        else
+        {
+            ChangeAnimationState(LIGHTFLICKER);
+            Invoke("Motion_Happened", 0f);
+        }
 
         if (inputM.Player.RotationW.triggered)
         {
@@ -218,31 +255,31 @@ public class crowbarmove : MonoBehaviour
 
         //xAxis = Input.GetAxisRaw("Horizontal"); //don'T need to get raw change it to once pushed button sort of thing
         // But it may require to be landed on certain place in certain positiion so it will require some 
-        if (!In_Motion)
-        {
-            In_Motion = true;
-            if (RightMotion)
-            {
-                RightMotion = false;
-                ChangeAnimationState(JUMPTORIGHT_LONG);
-                UnityEngine.Debug.Log("RIGHT_LONG");
-                Length = animator.GetCurrentAnimatorStateInfo(0).length;
-                Invoke("Motion_Happened", Length);
-            }
-            if (LeftMotion)
-            {
-                LeftMotion = false;
-                ChangeAnimationState(JUMPTOLEFT_LONG);
-                UnityEngine.Debug.Log("LEFT_LONG");
-                Length = animator.GetCurrentAnimatorStateInfo(0).length;
-                Invoke("Motion_Happened", Length);
-            }
-            else
-            {
-                ChangeAnimationState(LIGHTFLICKER);
-                Invoke("Motion_Happened", 0f);
-            }
-        }
+        /*         if (!In_Motion)
+                {
+                    In_Motion = true;
+                    if (RightMotion)
+                    {
+                        RightMotion = false;
+                        ChangeAnimationState(JUMPTORIGHT_LONG);
+                        UnityEngine.Debug.Log("RIGHT_LONG");
+                        Length = animator.GetCurrentAnimatorStateInfo(0).length;
+                        Invoke("Motion_Happened", Length);
+                    }
+                    if (LeftMotion)
+                    {
+                        LeftMotion = false;
+                        ChangeAnimationState(JUMPTOLEFT_LONG);
+                        UnityEngine.Debug.Log("LEFT_LONG");
+                        Length = animator.GetCurrentAnimatorStateInfo(0).length;
+                        Invoke("Motion_Happened", Length);
+                    }
+                    else
+                    {
+                        ChangeAnimationState(LIGHTFLICKER);
+                        Invoke("Motion_Happened", 0f);
+                    }
+                } */
     }
 
     void Motion_Happened()
