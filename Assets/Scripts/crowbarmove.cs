@@ -9,6 +9,9 @@ public class crowbarmove : MonoBehaviour
     private Animator animator;
     public InputManager inputM;
     private Rigidbody2D rb2d;
+    private Vector3 childTransform;
+    private Transform childObject;
+
     public string currentState;
     private float xAxis;
     private float yAxis;
@@ -22,6 +25,7 @@ public class crowbarmove : MonoBehaviour
     public float posZ;
     public float rotY;
     private float epsilon = 0.001f;
+    private Vector3 finalPosition;
     public bool LeftBar;
     public bool MidBar;
     public bool RightBar;
@@ -53,10 +57,12 @@ public class crowbarmove : MonoBehaviour
     void Start()
     {
         //joystick = GetComponent<Joystick>();
+        //childTransform = GetComponentInChildren<Transform>();
+        childObject = transform.GetChild(0);
         transform.position = new Vector3(0f, 4.003f, 1.6f);
         MidBar = true;
         GetComponent<Rigidbody>().velocity = new Vector3(4, 0, 0);// crowbar and crowbarrot had to have rigidbody to work!!
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
         In_Motion = false;
     }
 
@@ -66,7 +72,7 @@ public class crowbarmove : MonoBehaviour
         UnityEngine.Debug.Log(In_Motion);
 
         // doesn't compatible with animator :( 
-        //this if makes sure , crowbar in Z position
+        //this "if" makes sure , crowbar in Z position
         if (transform.position.z <= 0.08 || transform.position.z >= 4.60)
         {
             // Create values between this range (minY to maxY) and store in yPos
@@ -77,11 +83,6 @@ public class crowbarmove : MonoBehaviour
         }
         //transform.position = new Vector3(Mathf.Clamp(transform.position.x, 0.5f, 0.5f), transform.position.y, transform.position.z);
 
-
-        posZ = transform.position.z;
-        UnityEngine.Debug.Log(posZ + " this is current posZ");
-        rotY = transform.eulerAngles.y;
-        UnityEngine.Debug.Log(rotY + " this is current rotY");
     }
 
     void Update()
@@ -91,13 +92,15 @@ public class crowbarmove : MonoBehaviour
         Quaternion rotation = transform.rotation;
 
         UnityEngine.Debug.Log(position.z + " current posz update2");
-        UnityEngine.Debug.Log(rotation.eulerAngles.y + " current roty update2");
+        UnityEngine.Debug.Log((int)rotation.eulerAngles.y + " current roty update2");
 
-        float yRotation = rotation.eulerAngles.y;
+        float yRotation = (int)rotation.eulerAngles.y;
         if (yRotation > 180f)
         {
             yRotation -= 360f;
         }
+
+
 
         /*         if (inputM.Player.A.triggered && Mathf.Abs(position.z - 1.6f) < epsilon)
                 {
@@ -116,6 +119,9 @@ public class crowbarmove : MonoBehaviour
             LeftBar = true;
             UnityEngine.Debug.Log("A triggered!!");
             ChangeAnimationState(Move_A);
+            Length = animator.GetCurrentAnimatorStateInfo(0).length;
+            Invoke("Motion_Happened", Length);
+            //childTransform.transform.position.z =
         }
         if (inputM.Player.AS.triggered && Mathf.Abs(position.z - 1.6f) < epsilon && Mathf.Abs(yRotation - 0f) < epsilon && MidBar == true)
         {
@@ -154,6 +160,8 @@ public class crowbarmove : MonoBehaviour
             MidBar = false;
             RightBar = true;
             ChangeAnimationState(Move_D);
+            Length = animator.GetCurrentAnimatorStateInfo(0).length;
+            Invoke("Motion_Happened", Length);
         }
         if (inputM.Player.DS.triggered && Mathf.Abs(position.z - 1.6f) < epsilon && Mathf.Abs(yRotation - 0f) < epsilon && MidBar == true)
         {
@@ -186,6 +194,11 @@ public class crowbarmove : MonoBehaviour
             ChangeAnimationState(Move_DWreverse);
         }
 
+        if (!animator.GetCurrentAnimatorStateInfo(0).loop)
+        {
+            finalPosition = transform.position;
+            childTransform = childObject.position;
+        }
 
         if (inputM.Player.RotationW.triggered)
         {
@@ -218,37 +231,16 @@ public class crowbarmove : MonoBehaviour
 
         //xAxis = Input.GetAxisRaw("Horizontal"); //don'T need to get raw change it to once pushed button sort of thing
         // But it may require to be landed on certain place in certain positiion so it will require some 
-        if (!In_Motion)
-        {
-            In_Motion = true;
-            if (RightMotion)
-            {
-                RightMotion = false;
-                ChangeAnimationState(JUMPTORIGHT_LONG);
-                UnityEngine.Debug.Log("RIGHT_LONG");
-                Length = animator.GetCurrentAnimatorStateInfo(0).length;
-                Invoke("Motion_Happened", Length);
-            }
-            if (LeftMotion)
-            {
-                LeftMotion = false;
-                ChangeAnimationState(JUMPTOLEFT_LONG);
-                UnityEngine.Debug.Log("LEFT_LONG");
-                Length = animator.GetCurrentAnimatorStateInfo(0).length;
-                Invoke("Motion_Happened", Length);
-            }
-            else
-            {
-                ChangeAnimationState(LIGHTFLICKER);
-                Invoke("Motion_Happened", 0f);
-            }
-        }
     }
 
     void Motion_Happened()
     {
-        In_Motion = false;
-        UnityEngine.Debug.Log("MOTİON HAPPENDED");
+        transform.position = finalPosition;
+        childObject.position = childTransform;
+        UnityEngine.Debug.Log("current finalPosition is  " + finalPosition + "currrent transform object pos" + transform.position);
+        UnityEngine.Debug.Log("current childtransform is  " + childTransform + "currrent child object pos" + childObject.position);
+        ChangeAnimationState(LIGHTFLICKER);
+        UnityEngine.Debug.Log("RETURNED TO İDLE");
     }
 
     void ChangeAnimationState(string newAnimation)

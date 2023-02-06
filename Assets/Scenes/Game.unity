@@ -193,6 +193,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40d4a938f4ed79945833176d22c291dd, type: 3}
+--- !u!1 &202771845 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4695795578883481784, guid: f19c4cf289599b447a0dbad1e3f375aa,
+    type: 3}
+  m_PrefabInstance: {fileID: 6388914661499588482}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &202771850
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202771845}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f93563e281ddf1542860dcf1f83c42ee, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &286735471 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6771772248425669014, guid: 2f7a22a4f52bc514a8dc4e017f54e97d,
@@ -1559,6 +1585,12 @@ MonoBehaviour:
   Tunnel: {fileID: 2136920097567858785, guid: 40d4a938f4ed79945833176d22c291dd, type: 3}
   "Aral\u0131k": 5
   Diffuculty: 0.8
+--- !u!4 &2141166081 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1143535588604815556, guid: f19c4cf289599b447a0dbad1e3f375aa,
+    type: 3}
+  m_PrefabInstance: {fileID: 6388914661499588482}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1013238440583253304
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1706,6 +1738,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1143535588604815555, guid: f19c4cf289599b447a0dbad1e3f375aa,
         type: 3}
+      propertyPath: MidBar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1143535588604815555, guid: f19c4cf289599b447a0dbad1e3f375aa,
+        type: 3}
       propertyPath: joystick
       value: 
       objectReference: {fileID: 375290736}
@@ -1714,6 +1751,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1143535588604815555, guid: f19c4cf289599b447a0dbad1e3f375aa,
+        type: 3}
+      propertyPath: parentTransform
+      value: 
+      objectReference: {fileID: 2141166081}
     - target: {fileID: 1143535588604815556, guid: f19c4cf289599b447a0dbad1e3f375aa,
         type: 3}
       propertyPath: m_RootOrder
@@ -1778,6 +1820,16 @@ PrefabInstance:
         type: 3}
       propertyPath: InitialModule.maxNumParticles
       value: 392
+      objectReference: {fileID: 0}
+    - target: {fileID: 4695795578883481784, guid: f19c4cf289599b447a0dbad1e3f375aa,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5474384874763559064, guid: f19c4cf289599b447a0dbad1e3f375aa,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6388914660692323298, guid: f19c4cf289599b447a0dbad1e3f375aa,
         type: 3}
