@@ -113,9 +113,9 @@ public partial class @InputManager : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""modifier"",
-                    ""id"": ""5d4ea6ef-1583-4864-971d-c1394523e53e"",
-                    ""path"": ""<Keyboard>/s"",
+                    ""name"": ""binding"",
+                    ""id"": ""d0b46b02-bb3c-488e-8326-9745bc043548"",
+                    ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -125,8 +125,8 @@ public partial class @InputManager : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""binding"",
-                    ""id"": ""d0b46b02-bb3c-488e-8326-9745bc043548"",
-                    ""path"": ""<Keyboard>/d"",
+                    ""id"": ""32a5999b-c386-48c9-b994-5ec1b6fe2906"",
+                    ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -157,9 +157,9 @@ public partial class @InputManager : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""modifier"",
-                    ""id"": ""dba26923-6f35-47a7-ac9e-80a0e5c30638"",
-                    ""path"": ""<Keyboard>/s"",
+                    ""name"": ""binding"",
+                    ""id"": ""46de47fa-bcf1-4e24-9ed7-e5a171d58010"",
+                    ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -169,8 +169,8 @@ public partial class @InputManager : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""binding"",
-                    ""id"": ""46de47fa-bcf1-4e24-9ed7-e5a171d58010"",
-                    ""path"": ""<Keyboard>/a"",
+                    ""id"": ""f599fef4-4050-4fa9-a222-b3b229a984ed"",
+                    ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -190,9 +190,9 @@ public partial class @InputManager : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""modifier"",
-                    ""id"": ""d18285ed-0893-4b16-a468-13fb1478cde9"",
-                    ""path"": ""<Keyboard>/w"",
+                    ""name"": ""binding"",
+                    ""id"": ""8bbd3e34-c544-40a9-b1d1-196eede07bd6"",
+                    ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -202,8 +202,8 @@ public partial class @InputManager : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""binding"",
-                    ""id"": ""8bbd3e34-c544-40a9-b1d1-196eede07bd6"",
-                    ""path"": ""<Keyboard>/a"",
+                    ""id"": ""e2b0d5ff-2675-43f3-ac45-198341708060"",
+                    ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -256,9 +256,9 @@ public partial class @InputManager : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""modifier"",
-                    ""id"": ""243382ef-8eee-4c7e-be90-fa6f1e1e4838"",
-                    ""path"": ""<Keyboard>/w"",
+                    ""name"": ""binding"",
+                    ""id"": ""94a2ebc2-8156-4e28-82dd-e201ce31c564"",
+                    ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -268,8 +268,8 @@ public partial class @InputManager : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""binding"",
-                    ""id"": ""94a2ebc2-8156-4e28-82dd-e201ce31c564"",
-                    ""path"": ""<Keyboard>/d"",
+                    ""id"": ""6a57cbe9-57c3-4ec6-983a-106c7db3d1d8"",
+                    ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,9 +18,10 @@ public class crowbarmove : MonoBehaviour
     private bool LeftMotion;
     private bool RightMotion;
 
-// animation needed varibles.
+    // animation needed varibles.
     public float posZ;
     public float rotY;
+    private float epsilon = 0.001f;
     public bool LeftBar;
     public bool MidBar;
     public bool RightBar;
@@ -51,8 +53,8 @@ public class crowbarmove : MonoBehaviour
     void Start()
     {
         //joystick = GetComponent<Joystick>();
-        transform.position = new Vector3(0f, 4.003f, 3.159f);
-        LeftBar = true;
+        transform.position = new Vector3(0f, 4.003f, 1.6f);
+        MidBar = true;
         GetComponent<Rigidbody>().velocity = new Vector3(4, 0, 0);// crowbar and crowbarrot had to have rigidbody to work!!
         animator = GetComponent<Animator>();
         In_Motion = false;
@@ -61,7 +63,7 @@ public class crowbarmove : MonoBehaviour
     void FixedUpdate()
     {
         //DeleteBehindPlayer();
-        Debug.Log(In_Motion);
+        UnityEngine.Debug.Log(In_Motion);
 
         // doesn't compatible with animator :( 
         //this if makes sure , crowbar in Z position
@@ -74,85 +76,114 @@ public class crowbarmove : MonoBehaviour
             transform.position = new Vector3(transform.position.x, transform.position.y, zPos);
         }
         //transform.position = new Vector3(Mathf.Clamp(transform.position.x, 0.5f, 0.5f), transform.position.y, transform.position.z);
+
+
         posZ = transform.position.z;
+        UnityEngine.Debug.Log(posZ + " this is current posZ");
         rotY = transform.eulerAngles.y;
+        UnityEngine.Debug.Log(rotY + " this is current rotY");
     }
 
     void Update()
     {
-        if (inputM.Player.A.triggered && posZ == 1.6 && rotY == -180  && MidBar = true)
+
+        Vector3 position = transform.position;
+        Quaternion rotation = transform.rotation;
+
+        UnityEngine.Debug.Log(position.z + " current posz update2");
+        UnityEngine.Debug.Log(rotation.eulerAngles.y + " current roty update2");
+
+        float yRotation = rotation.eulerAngles.y;
+        if (yRotation > 180f)
+        {
+            yRotation -= 360f;
+        }
+
+        /*         if (inputM.Player.A.triggered && Mathf.Abs(position.z - 1.6f) < epsilon)
+                {
+                    UnityEngine.Debug.Log("A triggered!!");
+                }
+                if (inputM.Player.D.triggered && MidBar == true && Mathf.Abs(yRotation - 0f) < epsilon)
+                {
+                    UnityEngine.Debug.Log("D triggered!!");
+                } */
+
+
+
+        if (inputM.Player.A.triggered && Mathf.Abs(position.z - 1.6f) < epsilon && Mathf.Abs(yRotation - 180f) < epsilon && MidBar == true)
         {
             MidBar = false;
-            LeftBar= true;
+            LeftBar = true;
+            UnityEngine.Debug.Log("A triggered!!");
             ChangeAnimationState(Move_A);
         }
-        if (inputM.Player.AS.triggered && posZ == 1.6 && rotY == 0  && MidBar = true)
+        if (inputM.Player.AS.triggered && Mathf.Abs(position.z - 1.6f) < epsilon && Mathf.Abs(yRotation - 0f) < epsilon && MidBar == true)
         {
             MidBar = false;
-            LeftBar= true;
-            ChangeAnimationState(Move_AS); 
+            LeftBar = true;
+            ChangeAnimationState(Move_AS);
         }
-        if (inputM.Player.AW.triggered && posZ == 1.6 && rotY == 0  && MidBar = true)
+        if (inputM.Player.AW.triggered && Mathf.Abs(position.z - 1.6f) < epsilon && Mathf.Abs(yRotation - 0f) < epsilon && MidBar == true)
         {
             MidBar = false;
-            LeftBar= true;
+            LeftBar = true;
             ChangeAnimationState(Move_AW);
         }
-        if (inputM.Player.A.triggered && posZ == 3 && rotY == 0  && LeftBar = true)
+        if (inputM.Player.A.triggered && Mathf.Abs(position.z - 3f) < epsilon && Mathf.Abs(yRotation - 0f) < epsilon && LeftBar == true)
         {
             MidBar = true;
-            LeftBar= false;
-            ChangeAnimationState(Move_Areverse);  
+            LeftBar = false;
+            ChangeAnimationState(Move_Areverse);
         }
-        if (inputM.Player.AS.triggered && posZ == 3 && rotY == -180  && LeftBar = true )
+        if (inputM.Player.AS.triggered && Mathf.Abs(position.z - 3f) < epsilon && Mathf.Abs(yRotation - 180f) < epsilon && LeftBar == true)
         {
             MidBar = true;
-            LeftBar= false;
+            LeftBar = false;
             ChangeAnimationState(Move_ASreverse);
         }
-        if (inputM.Player.AW.triggered && posZ == 3 && rotY == 0  && LeftBar = true)
+        if (inputM.Player.AW.triggered && Mathf.Abs(position.z - 3f) < epsilon && Mathf.Abs(yRotation - 0f) < epsilon && LeftBar == true)
         {
             MidBar = true;
-            LeftBar= false;
-            ChangeAnimationState(Move_AWreverse);  
+            LeftBar = false;
+            ChangeAnimationState(Move_AWreverse);
         }
 
 
-        if (inputM.Player.D.triggered && posZ == 1.6 && rotY == 0  && MidBar = true) 
+        if (inputM.Player.D.triggered && Mathf.Abs(position.z - 1.6f) < epsilon && Mathf.Abs(yRotation - 0f) < epsilon && MidBar == true)
         {
             MidBar = false;
             RightBar = true;
             ChangeAnimationState(Move_D);
         }
-        if (inputM.Player.DS.triggered && posZ == 1.6 && rotY == 0  && MidBar = true)
+        if (inputM.Player.DS.triggered && Mathf.Abs(position.z - 1.6f) < epsilon && Mathf.Abs(yRotation - 0f) < epsilon && MidBar == true)
         {
             MidBar = false;
             RightBar = true;
-            ChangeAnimationState(Move_DS);  
+            ChangeAnimationState(Move_DS);
         }
-        if (inputM.Player.DW.triggered && posZ == 1.6 && rotY == -180  && MidBar = true)
+        if (inputM.Player.DW.triggered && Mathf.Abs(position.z - 1.6f) < epsilon && Mathf.Abs(yRotation - 180f) < epsilon && MidBar == true)
         {
             MidBar = false;
             RightBar = true;
             ChangeAnimationState(Move_DW);
         }
-        if (inputM.Player.D.triggered && posZ == 0.1 && rotY == -180  && RightBar = true)
+        if (inputM.Player.D.triggered && Mathf.Abs(position.z - 0.1f) < epsilon && Mathf.Abs(yRotation - 180f) < epsilon && RightBar == true)
         {
             MidBar = true;
             RightBar = false;
-            ChangeAnimationState(Move_Dreverse);  
+            ChangeAnimationState(Move_Dreverse);
         }
-        if (inputM.Player.DS.triggered && posZ == 0.1 && rotY == 0  && RightBar = true)
+        if (inputM.Player.DS.triggered && Mathf.Abs(position.z - 0.1f) < epsilon && Mathf.Abs(yRotation - 0f) < epsilon && RightBar == true)
         {
             MidBar = true;
             RightBar = false;
             ChangeAnimationState(Move_DSreverse);
         }
-        if (inputM.Player.DW.triggered && posZ == 0.1 && rotY == -180  && RightBar = true)
+        if (inputM.Player.DW.triggered && Mathf.Abs(position.z - 0.1f) < epsilon && Mathf.Abs(yRotation - 180f) < epsilon && RightBar == true)
         {
             MidBar = true;
             RightBar = false;
-            ChangeAnimationState(Move_DWreverse);  
+            ChangeAnimationState(Move_DWreverse);
         }
 
 
@@ -194,7 +225,7 @@ public class crowbarmove : MonoBehaviour
             {
                 RightMotion = false;
                 ChangeAnimationState(JUMPTORIGHT_LONG);
-                Debug.Log("RIGHT_LONG");
+                UnityEngine.Debug.Log("RIGHT_LONG");
                 Length = animator.GetCurrentAnimatorStateInfo(0).length;
                 Invoke("Motion_Happened", Length);
             }
@@ -202,7 +233,7 @@ public class crowbarmove : MonoBehaviour
             {
                 LeftMotion = false;
                 ChangeAnimationState(JUMPTOLEFT_LONG);
-                Debug.Log("LEFT_LONG");
+                UnityEngine.Debug.Log("LEFT_LONG");
                 Length = animator.GetCurrentAnimatorStateInfo(0).length;
                 Invoke("Motion_Happened", Length);
             }
@@ -217,7 +248,7 @@ public class crowbarmove : MonoBehaviour
     void Motion_Happened()
     {
         In_Motion = false;
-        Debug.Log("MOTİON HAPPENDED");
+        UnityEngine.Debug.Log("MOTİON HAPPENDED");
     }
 
     void ChangeAnimationState(string newAnimation)

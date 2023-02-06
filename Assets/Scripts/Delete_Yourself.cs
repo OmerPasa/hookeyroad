@@ -11,7 +11,7 @@ public class Delete_Yourself : MonoBehaviour
 
         crowbar = (GameObject.Find("crowbar_Masterer"));
         distance = (int)crowbar.transform.position.x - (int)transform.position.x;
-        Debug.Log(distance + " currrent distance is ");
+        //Debug.Log(distance + " currrent distance is ");
         if (crowbar.transform.position.x > transform.position.x + 50)
         {
             Invoke("Die", 2f);
