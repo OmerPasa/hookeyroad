@@ -11,6 +11,7 @@ public class crowbarmove : MonoBehaviour
     private Rigidbody2D rb2d;
     private Vector3 childTransform;
     private Transform childObject;
+    private Vector3 finalPosition;
 
     public string currentState;
     private float xAxis;
@@ -25,7 +26,6 @@ public class crowbarmove : MonoBehaviour
     public float posZ;
     public float rotY;
     private float epsilon = 0.001f;
-    private Vector3 finalPosition;
     public bool LeftBar;
     public bool MidBar;
     public bool RightBar;
@@ -62,7 +62,7 @@ public class crowbarmove : MonoBehaviour
         transform.position = new Vector3(0f, 4.003f, 1.6f);
         MidBar = true;
         GetComponent<Rigidbody>().velocity = new Vector3(4, 0, 0);// crowbar and crowbarrot had to have rigidbody to work!!
-        animator = GetComponentInChildren<Animator>();
+        animator = GetComponent<Animator>();
         In_Motion = false;
     }
 
@@ -194,11 +194,11 @@ public class crowbarmove : MonoBehaviour
             ChangeAnimationState(Move_DWreverse);
         }
 
-        if (!animator.GetCurrentAnimatorStateInfo(0).loop)
-        {
-            finalPosition = transform.position;
-            childTransform = childObject.position;
-        }
+        /*         if (!animator.GetCurrentAnimatorStateInfo(0).loop)
+                {
+                    finalPosition = transform.position;
+                    childTransform = childObject.position;
+                } */
 
         if (inputM.Player.RotationW.triggered)
         {
@@ -232,6 +232,19 @@ public class crowbarmove : MonoBehaviour
         //xAxis = Input.GetAxisRaw("Horizontal"); //don'T need to get raw change it to once pushed button sort of thing
         // But it may require to be landed on certain place in certain positiion so it will require some 
     }
+
+    /*     private void LateUpdate()
+        {
+            Transform childObject = transform.GetChild(0);
+
+            AnimatorStateInfo state = animator.GetCurrentAnimatorStateInfo(0);
+            if (state.normalizedTime >= 1)
+            {
+                finalPosition = childObject.localPosition;
+            }
+
+            childObject.localPosition = finalPosition;
+        } */
 
     void Motion_Happened()
     {

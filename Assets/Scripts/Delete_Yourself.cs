@@ -9,7 +9,7 @@ public class Delete_Yourself : MonoBehaviour
     void Update()
     {
 
-        crowbar = (GameObject.Find("crowbar_Masterer"));
+        crowbar = (GameObject.Find("Crowbar"));
         distance = (int)crowbar.transform.position.x - (int)transform.position.x;
         //Debug.Log(distance + " currrent distance is ");
         if (crowbar.transform.position.x > transform.position.x + 50)
